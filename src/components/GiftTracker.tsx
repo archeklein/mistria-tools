@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { useGiftStore } from "../stores/giftStore";
 import CharacterCard from "./CharacterCard";
 import Inventory from "./Inventory";
+import Toggle from "./Toggle";
 
 const GiftTracker: React.FC = () => {
   const { characters } = useGiftStore();
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [showLikedGifts, setShowLikedGifts] = useState(true);
+  const [sortBy, setSortBy] = useState<"alphabetical" | "category">(
+    "alphabetical"
+  );
 
   // Get unique categories
   const categories = [
@@ -14,15 +18,24 @@ const GiftTracker: React.FC = () => {
     ...Array.from(new Set(characters.map((char) => char.category))),
   ];
 
-  // Filter characters based on search and category
-  const filteredCharacters = characters.filter((character) => {
-    const matchesSearch = character.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      selectedCategory === "All" || character.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Filter and sort characters
+  const filteredAndSortedCharacters = characters
+    .filter((character) => {
+      const matchesCategory =
+        selectedCategory === "All" || character.category === selectedCategory;
+      return matchesCategory;
+    })
+    .sort((a, b) => {
+      if (sortBy === "alphabetical") {
+        return a.name.localeCompare(b.name);
+      } else {
+        // Sort by category first, then alphabetically within category
+        if (a.category !== b.category) {
+          return a.category.localeCompare(b.category);
+        }
+        return a.name.localeCompare(b.name);
+      }
+    });
 
   return (
     <div className="space-y-4">
@@ -36,27 +49,9 @@ const GiftTracker: React.FC = () => {
 
       {/* Filters */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-3">
-        <div className="flex flex-col sm:flex-row gap-3">
-          {/* Search */}
-          <div className="flex-1">
-            <label
-              htmlFor="search"
-              className="block text-xs font-medium text-gray-700 mb-1"
-            >
-              Search Characters
-            </label>
-            <input
-              id="search"
-              type="text"
-              placeholder="Search by character name..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-2 py-1 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            />
-          </div>
-
+        <div className="flex flex-col sm:flex-row gap-3 items-end">
           {/* Category Filter */}
-          <div className="sm:w-64">
+          <div className="flex-1">
             <label
               htmlFor="category"
               className="block text-xs font-medium text-gray-700 mb-1"
@@ -76,6 +71,36 @@ const GiftTracker: React.FC = () => {
               ))}
             </select>
           </div>
+
+          {/* Sort Options */}
+          <div className="flex-1">
+            <label
+              htmlFor="sort"
+              className="block text-xs font-medium text-gray-700 mb-1"
+            >
+              Sort By
+            </label>
+            <select
+              id="sort"
+              value={sortBy}
+              onChange={(e) =>
+                setSortBy(e.target.value as "alphabetical" | "category")
+              }
+              className="w-full px-2 py-1 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            >
+              <option value="alphabetical">Alphabetically</option>
+              <option value="category">Category</option>
+            </select>
+          </div>
+
+          {/* Liked Gifts Toggle */}
+          <div className="flex items-center gap-2 pb-1">
+            <Toggle
+              checked={showLikedGifts}
+              onChange={setShowLikedGifts}
+              label="🎵 Show Liked"
+            />
+          </div>
         </div>
       </div>
 
@@ -85,13 +110,17 @@ const GiftTracker: React.FC = () => {
         <div className="xl:col-span-2 space-y-3">
           {/* Character Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {filteredCharacters.map((character) => (
-              <CharacterCard key={character.name} character={character} />
+            {filteredAndSortedCharacters.map((character) => (
+              <CharacterCard
+                key={character.name}
+                character={character}
+                showLikedGifts={showLikedGifts}
+              />
             ))}
           </div>
 
           {/* No Results */}
-          {filteredCharacters.length === 0 && (
+          {filteredAndSortedCharacters.length === 0 && (
             <div className="text-center py-6">
               <p className="text-gray-500 text-sm">
                 No characters found matching your filters.

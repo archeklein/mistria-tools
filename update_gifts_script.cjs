@@ -1,8 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
-// Read the current JSON file
-const jsonData = JSON.parse(fs.readFileSync("characters_gifts.json", "utf8"));
+// NOTE: This script needs to be updated to work with the new data structure
+// where characters.json stores gift names as strings and items.json stores the icon mappings
+// For now, the data structure has been successfully refactored using refactor_data_structure.cjs
+
+// Read the current JSON files
+const charactersData = JSON.parse(
+  fs.readFileSync("src/data/characters.json", "utf8")
+);
+const itemsData = JSON.parse(fs.readFileSync("src/data/items.json", "utf8"));
 
 // List of available icon files (from the listing)
 const availableIcons = [
@@ -101,24 +108,27 @@ function findIconForGift(giftName) {
   return null;
 }
 
-// Transform gift arrays from strings to Item objects
-function transformGifts(giftArray) {
-  return giftArray.map((giftName) => ({
-    name: giftName,
-    icon: findIconForGift(giftName),
-  }));
+// Update existing gift objects to add missing icons
+function updateGiftIcons(giftArray) {
+  return giftArray.map((gift) => {
+    // If icon is null or missing, try to find one
+    if (!gift.icon) {
+      gift.icon = findIconForGift(gift.name);
+    }
+    return gift;
+  });
 }
 
 // Update each character's gifts
 jsonData.characters.forEach((character) => {
-  character.loved_gifts = transformGifts(character.loved_gifts);
-  character.liked_gifts = transformGifts(character.liked_gifts);
+  character.loved_gifts = updateGiftIcons(character.loved_gifts);
+  character.liked_gifts = updateGiftIcons(character.liked_gifts);
 });
 
 // Write the updated JSON file
 fs.writeFileSync("characters_gifts.json", JSON.stringify(jsonData, null, 2));
 
-console.log("Successfully updated characters_gifts.json with Item structure");
+console.log("Successfully updated characters_gifts.json with missing icons");
 
 // Log some statistics
 let totalGifts = 0;
@@ -142,6 +152,7 @@ jsonData.characters.forEach((character) => {
   });
 });
 
+console.log(`\n📊 STATISTICS:`);
 console.log(`Total gifts: ${totalGifts}`);
 console.log(`Gifts with icons: ${giftsWithIcons}`);
 console.log(`Gifts without icons: ${totalGifts - giftsWithIcons}`);
@@ -155,6 +166,32 @@ if (unusedIcons.length > 0) {
   unusedIcons.forEach((icon) => {
     console.log(`  - ${icon}`);
   });
+  console.log(
+    `\n💡 Consider removing these ${unusedIcons.length} unused icon files or finding corresponding items.`
+  );
 } else {
   console.log("\n✅ All icons have corresponding items!");
+}
+
+// Show items without icons
+const itemsWithoutIcons = [];
+jsonData.characters.forEach((character) => {
+  character.loved_gifts.forEach((gift) => {
+    if (!gift.icon) {
+      itemsWithoutIcons.push(gift.name);
+    }
+  });
+  character.liked_gifts.forEach((gift) => {
+    if (!gift.icon) {
+      itemsWithoutIcons.push(gift.name);
+    }
+  });
+});
+
+const uniqueItemsWithoutIcons = [...new Set(itemsWithoutIcons)];
+if (uniqueItemsWithoutIcons.length > 0) {
+  console.log("\n❌ ITEMS WITHOUT ICONS:");
+  uniqueItemsWithoutIcons.forEach((item) => {
+    console.log(`  - ${item}`);
+  });
 }

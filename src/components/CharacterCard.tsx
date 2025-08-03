@@ -4,11 +4,24 @@ import SegmentedControl from "./SegmentedControl";
 
 interface CharacterCardProps {
   character: Character;
+  showLikedGifts: boolean;
 }
 
-const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
-  const { selectGift, getSelectedGift } = useGiftStore();
+const CharacterCard: React.FC<CharacterCardProps> = ({
+  character,
+  showLikedGifts,
+}) => {
+  const { selectGift, getSelectedGift, getItem } = useGiftStore();
   const selectedGift = getSelectedGift(character.name);
+
+  // Convert string gift names to Item objects
+  const lovedGiftItems = character.loved_gifts
+    .map((giftName) => getItem(giftName))
+    .filter((item): item is Item => item !== undefined);
+
+  const likedGiftItems = character.liked_gifts
+    .map((giftName) => getItem(giftName))
+    .filter((item): item is Item => item !== undefined);
 
   const handleGiftSelect = (gift: Item) => {
     selectGift(character.name, gift);
@@ -47,17 +60,33 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         </div>
       </div>
 
-      <div className="mb-3">
-        <h4 className="text-sm font-semibold text-red-600 mb-1 flex items-center">
-          ❤️ Loved Gifts
-        </h4>
-        <SegmentedControl
-          items={character.loved_gifts}
-          selectedItem={selectedGift}
-          onItemSelect={handleGiftSelect}
-          characterName={character.name}
-        />
+      {/* Loved Gifts */}
+      <div className="mb-3 flex items-start gap-3">
+        <div className="text-lg flex-shrink-0 mt-1">❤️</div>
+        <div className="flex-1">
+          <SegmentedControl
+            items={lovedGiftItems}
+            selectedItem={selectedGift}
+            onItemSelect={handleGiftSelect}
+            characterName={character.name}
+          />
+        </div>
       </div>
+
+      {/* Liked Gifts */}
+      {showLikedGifts && (
+        <div className="flex items-start gap-3">
+          <div className="text-lg flex-shrink-0 mt-1">🎵</div>
+          <div className="flex-1">
+            <SegmentedControl
+              items={likedGiftItems}
+              selectedItem={selectedGift}
+              onItemSelect={handleGiftSelect}
+              characterName={character.name}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

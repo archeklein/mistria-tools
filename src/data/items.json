@@ -1,0 +1,1670 @@
+{
+  "items": [
+    {
+      "name": "Coffee",
+      "icon": "Coffee.webp"
+    },
+    {
+      "name": "Gazpacho",
+      "icon": "Gazpacho.webp"
+    },
+    {
+      "name": "Lemon Pie",
+      "icon": "Lemon_pie.webp"
+    },
+    {
+      "name": "Middlemist",
+      "icon": "Middlemist.webp"
+    },
+    {
+      "name": "Mistril Ingot",
+      "icon": null
+    },
+    {
+      "name": "Peaches & Cream",
+      "icon": "Peaches_and_cream.webp"
+    },
+    {
+      "name": "Perfect Pink Diamond",
+      "icon": null
+    },
+    {
+      "name": "Plum Blossom",
+      "icon": "Plum_blossom.webp"
+    },
+    {
+      "name": "Pumpkin Pie",
+      "icon": "Pumpkin_pie.webp"
+    },
+    {
+      "name": "Tea with Lemon",
+      "icon": "Cup_of_tea.webp"
+    },
+    {
+      "name": "Candied Lemon Peel",
+      "icon": "Candied_lemon_peel.webp"
+    },
+    {
+      "name": "Diamond",
+      "icon": "Diamond.webp"
+    },
+    {
+      "name": "Heather",
+      "icon": "Heather.webp"
+    },
+    {
+      "name": "Lemon",
+      "icon": "Lemon.webp"
+    },
+    {
+      "name": "Lemon Cake",
+      "icon": "Lemon_cake.webp"
+    },
+    {
+      "name": "Lemonade",
+      "icon": "Lemonade.webp"
+    },
+    {
+      "name": "Mistril Ore",
+      "icon": null
+    },
+    {
+      "name": "Paper",
+      "icon": "Paper.webp"
+    },
+    {
+      "name": "Peach",
+      "icon": "Peach.webp"
+    },
+    {
+      "name": "Pineshroom Toast",
+      "icon": "Pineshroom_toast.webp"
+    },
+    {
+      "name": "Pink Diamond",
+      "icon": null
+    },
+    {
+      "name": "Pumpkin Stew",
+      "icon": "Pumpkin_stew.webp"
+    },
+    {
+      "name": "Red Wine",
+      "icon": "Red_Wine.webp"
+    },
+    {
+      "name": "Snapdragon",
+      "icon": "Snapdragon.webp"
+    },
+    {
+      "name": "Spicy Cheddar Biscuit",
+      "icon": "Spicy_cheddar_biscuit.webp"
+    },
+    {
+      "name": "Tulip",
+      "icon": "Tulip.webp"
+    },
+    {
+      "name": "Vegetable Soup",
+      "icon": "Vegetable_soup.webp"
+    },
+    {
+      "name": "White Wine",
+      "icon": "White_wine.webp"
+    },
+    {
+      "name": "Wild Berry Pie",
+      "icon": "Wild_berry_pie.webp"
+    },
+    {
+      "name": "Wild Berry Scone",
+      "icon": "Wild_berry_scone.webp"
+    },
+    {
+      "name": "Alda Gem Bracelet",
+      "icon": "Alda_gem_bracelet.webp"
+    },
+    {
+      "name": "Apple Honey Curry",
+      "icon": "Apple_honey_curry.webp"
+    },
+    {
+      "name": "Chili Coconut Curry",
+      "icon": "Chili_coconut_curry.webp"
+    },
+    {
+      "name": "Deluxe Curry",
+      "icon": "Deluxe_curry.webp"
+    },
+    {
+      "name": "Family Crest Pendant",
+      "icon": "Family_crest_pendant.webp"
+    },
+    {
+      "name": "Perfect Diamond",
+      "icon": "Perfect_diamond.webp"
+    },
+    {
+      "name": "Perfect Emerald",
+      "icon": "Perfect_emerald.webp"
+    },
+    {
+      "name": "Perfect Ruby",
+      "icon": "Perfect_ruby.webp"
+    },
+    {
+      "name": "Perfect Sapphire",
+      "icon": "Perfect_sapphire.webp"
+    },
+    {
+      "name": "Cauliflower Curry",
+      "icon": "Cauliflower_curry.webp"
+    },
+    {
+      "name": "Chickpea Curry",
+      "icon": "Chickpea_curry.webp"
+    },
+    {
+      "name": "Crystal Rose",
+      "icon": "Crystal_rose.webp"
+    },
+    {
+      "name": "Emerald",
+      "icon": "Emerald.webp"
+    },
+    {
+      "name": "Fog Orchid",
+      "icon": "Fog_orchid.webp"
+    },
+    {
+      "name": "Frost Lily",
+      "icon": "Frost_lily.webp"
+    },
+    {
+      "name": "Gold Ingot",
+      "icon": "Gold_Ingot.webp"
+    },
+    {
+      "name": "Gold Ore",
+      "icon": "Gold_Ore.webp"
+    },
+    {
+      "name": "Golden Cheesecake",
+      "icon": "Golden_cheesecake.webp"
+    },
+    {
+      "name": "Golden Cookies",
+      "icon": "Golden_cookies.webp"
+    },
+    {
+      "name": "Jasmine",
+      "icon": "Jasmine.webp"
+    },
+    {
+      "name": "Perfect Gold Ore",
+      "icon": "Perfect_gold_ore.webp"
+    },
+    {
+      "name": "Rose",
+      "icon": "Rose.webp"
+    },
+    {
+      "name": "Ruby",
+      "icon": "Ruby.webp"
+    },
+    {
+      "name": "Rusted Treasure Chest",
+      "icon": "Rusted_treasure_chest.webp"
+    },
+    {
+      "name": "Sapphire",
+      "icon": "Sapphire.webp"
+    },
+    {
+      "name": "Sapphire Betta",
+      "icon": "Sapphire_betta.webp"
+    },
+    {
+      "name": "Snowdrop Anemone",
+      "icon": "Snowdrop_anemone.webp"
+    },
+    {
+      "name": "Breath of Fire",
+      "icon": null
+    },
+    {
+      "name": "Essence Blossom",
+      "icon": null
+    },
+    {
+      "name": "Hydrangea",
+      "icon": null
+    },
+    {
+      "name": "Spring Galette",
+      "icon": null
+    },
+    {
+      "name": "Catmint",
+      "icon": null
+    },
+    {
+      "name": "Celosia",
+      "icon": null
+    },
+    {
+      "name": "Chysanthemum",
+      "icon": null
+    },
+    {
+      "name": "Cosmos",
+      "icon": null
+    },
+    {
+      "name": "Crocus",
+      "icon": null
+    },
+    {
+      "name": "Daffodil",
+      "icon": null
+    },
+    {
+      "name": "Daisy",
+      "icon": null
+    },
+    {
+      "name": "Dandelion",
+      "icon": null
+    },
+    {
+      "name": "Iris",
+      "icon": null
+    },
+    {
+      "name": "Lilac",
+      "icon": null
+    },
+    {
+      "name": "Marigold",
+      "icon": null
+    },
+    {
+      "name": "Poinsetta",
+      "icon": null
+    },
+    {
+      "name": "Rose Tea",
+      "icon": null
+    },
+    {
+      "name": "Spring Salad",
+      "icon": null
+    },
+    {
+      "name": "Sunflower",
+      "icon": null
+    },
+    {
+      "name": "Viola",
+      "icon": null
+    },
+    {
+      "name": "Chocolate Cake",
+      "icon": null
+    },
+    {
+      "name": "Coconut Cream Pie",
+      "icon": null
+    },
+    {
+      "name": "Glowberry Cookies",
+      "icon": null
+    },
+    {
+      "name": "Ice Cream Sundae",
+      "icon": null
+    },
+    {
+      "name": "Mont Blanc",
+      "icon": null
+    },
+    {
+      "name": "Spell Fruit Parfait",
+      "icon": null
+    },
+    {
+      "name": "Strawberry Shortcake",
+      "icon": null
+    },
+    {
+      "name": "Apple Pie",
+      "icon": null
+    },
+    {
+      "name": "Berries and Cream",
+      "icon": null
+    },
+    {
+      "name": "Candied Strawberries",
+      "icon": null
+    },
+    {
+      "name": "Caramelized Moon Fruit",
+      "icon": null
+    },
+    {
+      "name": "Caramel Candy",
+      "icon": null
+    },
+    {
+      "name": "Cherry Cobbler",
+      "icon": null
+    },
+    {
+      "name": "Cherry Tart",
+      "icon": null
+    },
+    {
+      "name": "Chocolate",
+      "icon": null
+    },
+    {
+      "name": "Crystal Berry Pie",
+      "icon": null
+    },
+    {
+      "name": "Peaches and Cream",
+      "icon": "Peaches_and_cream.webp"
+    },
+    {
+      "name": "Pomegranate Sorbet",
+      "icon": null
+    },
+    {
+      "name": "Pudding",
+      "icon": null
+    },
+    {
+      "name": "Roasted Rice Tea",
+      "icon": null
+    },
+    {
+      "name": "Strawberries and Cream",
+      "icon": null
+    },
+    {
+      "name": "Sweet Sesame Balls",
+      "icon": null
+    },
+    {
+      "name": "Wintergreen Ice Cream",
+      "icon": null
+    },
+    {
+      "name": "Ancient Royal Sceptar",
+      "icon": null
+    },
+    {
+      "name": "Black Tablet",
+      "icon": null
+    },
+    {
+      "name": "Fish Tacos",
+      "icon": null
+    },
+    {
+      "name": "Hardened Essence",
+      "icon": null
+    },
+    {
+      "name": "Moonfruit Cake",
+      "icon": null
+    },
+    {
+      "name": "Mushroom Brew",
+      "icon": null
+    },
+    {
+      "name": "Pizza",
+      "icon": null
+    },
+    {
+      "name": "Crunchy Chickpeas",
+      "icon": null
+    },
+    {
+      "name": "Crystal",
+      "icon": null
+    },
+    {
+      "name": "Frog",
+      "icon": null
+    },
+    {
+      "name": "Latte",
+      "icon": null
+    },
+    {
+      "name": "Monster Powder",
+      "icon": null
+    },
+    {
+      "name": "Morel Mushroom",
+      "icon": null
+    },
+    {
+      "name": "Nettle",
+      "icon": null
+    },
+    {
+      "name": "Newt",
+      "icon": null
+    },
+    {
+      "name": "Night Queen",
+      "icon": null
+    },
+    {
+      "name": "Red Toadstool",
+      "icon": null
+    },
+    {
+      "name": "Shadow Flower",
+      "icon": null
+    },
+    {
+      "name": "Spell Fruit",
+      "icon": null
+    },
+    {
+      "name": "Toasted Sunflower Seeds",
+      "icon": null
+    },
+    {
+      "name": "Water Chestnut Fritters",
+      "icon": null
+    },
+    {
+      "name": "Golden Butter",
+      "icon": null
+    },
+    {
+      "name": "Golden Cheese",
+      "icon": null
+    },
+    {
+      "name": "Golden Duck Egg",
+      "icon": null
+    },
+    {
+      "name": "Golden Duck Mayonnaise",
+      "icon": null
+    },
+    {
+      "name": "Golden Egg",
+      "icon": null
+    },
+    {
+      "name": "Golden Mayonnaise",
+      "icon": null
+    },
+    {
+      "name": "Golden Milk",
+      "icon": null
+    },
+    {
+      "name": "Stone Horse",
+      "icon": null
+    },
+    {
+      "name": "Vegetable Quiche",
+      "icon": null
+    },
+    {
+      "name": "Butter",
+      "icon": null
+    },
+    {
+      "name": "Cheese",
+      "icon": null
+    },
+    {
+      "name": "Duck Egg",
+      "icon": null
+    },
+    {
+      "name": "Duck Mayonnaise",
+      "icon": null
+    },
+    {
+      "name": "Egg",
+      "icon": null
+    },
+    {
+      "name": "Loaded Baked Potato",
+      "icon": null
+    },
+    {
+      "name": "Mayonnaise",
+      "icon": null
+    },
+    {
+      "name": "Milk",
+      "icon": null
+    },
+    {
+      "name": "Mushroom Steak Dinner",
+      "icon": null
+    },
+    {
+      "name": "Quiche",
+      "icon": null
+    },
+    {
+      "name": "Sweet Potato Pie",
+      "icon": null
+    },
+    {
+      "name": "Vegetable Pot Pie",
+      "icon": null
+    },
+    {
+      "name": "Breaded Catfish",
+      "icon": null
+    },
+    {
+      "name": "Cabbage Slaw",
+      "icon": null
+    },
+    {
+      "name": "Incredibly Hot Pot",
+      "icon": null
+    },
+    {
+      "name": "Rosemary Garlic Noodles",
+      "icon": null
+    },
+    {
+      "name": "Seafood Boil",
+      "icon": null
+    },
+    {
+      "name": "Seafood Snow Pea Noodles",
+      "icon": null
+    },
+    {
+      "name": "Sushi Platter",
+      "icon": null
+    },
+    {
+      "name": "Cod with Thyme",
+      "icon": null
+    },
+    {
+      "name": "Deep Sea Soup",
+      "icon": null
+    },
+    {
+      "name": "Flour",
+      "icon": null
+    },
+    {
+      "name": "Garlic",
+      "icon": null
+    },
+    {
+      "name": "Garlic Bread",
+      "icon": null
+    },
+    {
+      "name": "Grilled Cheese",
+      "icon": null
+    },
+    {
+      "name": "Iced Coffee",
+      "icon": null
+    },
+    {
+      "name": "Miner's Mushroom Stew",
+      "icon": null
+    },
+    {
+      "name": "Rice",
+      "icon": null
+    },
+    {
+      "name": "Sugar",
+      "icon": null
+    },
+    {
+      "name": "Turnip and Potato Gratin",
+      "icon": null
+    },
+    {
+      "name": "Upper Mines Mushroom",
+      "icon": null
+    },
+    {
+      "name": "Dragon-Forged Bracelet",
+      "icon": null
+    },
+    {
+      "name": "Meteorite",
+      "icon": null
+    },
+    {
+      "name": "Perfect Copper Ore",
+      "icon": null
+    },
+    {
+      "name": "Perfect Iron Ore",
+      "icon": null
+    },
+    {
+      "name": "Perfect Mistril Ore",
+      "icon": null
+    },
+    {
+      "name": "Perfect Silver Ore",
+      "icon": null
+    },
+    {
+      "name": "Beer",
+      "icon": null
+    },
+    {
+      "name": "Copper Ingot",
+      "icon": null
+    },
+    {
+      "name": "Copper Ore",
+      "icon": null
+    },
+    {
+      "name": "Grilled Eel Rice Bowl",
+      "icon": null
+    },
+    {
+      "name": "Hot Chocolate",
+      "icon": null
+    },
+    {
+      "name": "Iron Ingot",
+      "icon": null
+    },
+    {
+      "name": "Iron Ore",
+      "icon": null
+    },
+    {
+      "name": "Mocha",
+      "icon": null
+    },
+    {
+      "name": "Perch Risotto",
+      "icon": null
+    },
+    {
+      "name": "Red Snapper Sushi",
+      "icon": null
+    },
+    {
+      "name": "Sea Bream Rice",
+      "icon": null
+    },
+    {
+      "name": "Sesame Tuna Bowl",
+      "icon": null
+    },
+    {
+      "name": "Silver Ingot",
+      "icon": null
+    },
+    {
+      "name": "Silver Ore",
+      "icon": null
+    },
+    {
+      "name": "Spicy Crab Sushi",
+      "icon": null
+    },
+    {
+      "name": "Golden Bristle",
+      "icon": null
+    },
+    {
+      "name": "Golden Bull Horn",
+      "icon": null
+    },
+    {
+      "name": "Golden Duck Feather",
+      "icon": null
+    },
+    {
+      "name": "Golden Feather",
+      "icon": null
+    },
+    {
+      "name": "Golden Horse Hair",
+      "icon": null
+    },
+    {
+      "name": "Hardwood",
+      "icon": null
+    },
+    {
+      "name": "Lobster Roll",
+      "icon": null
+    },
+    {
+      "name": "Veggie Sub Sandwich",
+      "icon": null
+    },
+    {
+      "name": "Wood",
+      "icon": null
+    },
+    {
+      "name": "Bread",
+      "icon": null
+    },
+    {
+      "name": "Bristle",
+      "icon": null
+    },
+    {
+      "name": "Bull Horn",
+      "icon": null
+    },
+    {
+      "name": "Clay",
+      "icon": null
+    },
+    {
+      "name": "Cranberry Orange Scone",
+      "icon": null
+    },
+    {
+      "name": "Duck Feather",
+      "icon": null
+    },
+    {
+      "name": "Glass",
+      "icon": null
+    },
+    {
+      "name": "Horse Hair",
+      "icon": null
+    },
+    {
+      "name": "Obsidian",
+      "icon": null
+    },
+    {
+      "name": "Rooster Feather",
+      "icon": null
+    },
+    {
+      "name": "Stone",
+      "icon": null
+    },
+    {
+      "name": "Beet",
+      "icon": null
+    },
+    {
+      "name": "Beet Salad",
+      "icon": null
+    },
+    {
+      "name": "Beet Soup",
+      "icon": null
+    },
+    {
+      "name": "Dragon Scale",
+      "icon": null
+    },
+    {
+      "name": "Harvest Plate",
+      "icon": null
+    },
+    {
+      "name": "Summer Salad",
+      "icon": null
+    },
+    {
+      "name": "Cucumber",
+      "icon": null
+    },
+    {
+      "name": "Cucumber Salad",
+      "icon": null
+    },
+    {
+      "name": "Green Tea",
+      "icon": null
+    },
+    {
+      "name": "Herb Salad",
+      "icon": null
+    },
+    {
+      "name": "Honey",
+      "icon": null
+    },
+    {
+      "name": "Pan Fried Salmon",
+      "icon": null
+    },
+    {
+      "name": "Rosehip",
+      "icon": null
+    },
+    {
+      "name": "Rosehip Jam",
+      "icon": null
+    },
+    {
+      "name": "Rosemary",
+      "icon": null
+    },
+    {
+      "name": "Seaweed",
+      "icon": null
+    },
+    {
+      "name": "Seaweed Salad",
+      "icon": null
+    },
+    {
+      "name": "Sweetroot",
+      "icon": null
+    },
+    {
+      "name": "Underseaweed",
+      "icon": null
+    },
+    {
+      "name": "Alda Bronze Sword",
+      "icon": null
+    },
+    {
+      "name": "Aldarian Sword",
+      "icon": null
+    },
+    {
+      "name": "Apple Juice",
+      "icon": null
+    },
+    {
+      "name": "Bullfrog",
+      "icon": null
+    },
+    {
+      "name": "Caldosian Sword",
+      "icon": null
+    },
+    {
+      "name": "Hermit Crab",
+      "icon": null
+    },
+    {
+      "name": "Jam Sandwich",
+      "icon": null
+    },
+    {
+      "name": "Apple",
+      "icon": null
+    },
+    {
+      "name": "Blackberry",
+      "icon": null
+    },
+    {
+      "name": "Cattail",
+      "icon": null
+    },
+    {
+      "name": "Grape Juice",
+      "icon": null
+    },
+    {
+      "name": "Lightning Dragonfly",
+      "icon": null
+    },
+    {
+      "name": "Monster Cookie",
+      "icon": null
+    },
+    {
+      "name": "Snail",
+      "icon": null
+    },
+    {
+      "name": "Trail Mix",
+      "icon": null
+    },
+    {
+      "name": "Turtle",
+      "icon": null
+    },
+    {
+      "name": "Hardboiled Egg",
+      "icon": null
+    },
+    {
+      "name": "Catfish",
+      "icon": null
+    },
+    {
+      "name": "Crystalline Cricket",
+      "icon": null
+    },
+    {
+      "name": "Petrified Wood",
+      "icon": null
+    },
+    {
+      "name": "Tiny Dinosaur Skeleton",
+      "icon": null
+    },
+    {
+      "name": "Butterfly",
+      "icon": null
+    },
+    {
+      "name": "Carrot",
+      "icon": null
+    },
+    {
+      "name": "Cicada",
+      "icon": null
+    },
+    {
+      "name": "Cod",
+      "icon": null
+    },
+    {
+      "name": "Cricket",
+      "icon": null
+    },
+    {
+      "name": "Firefly",
+      "icon": null
+    },
+    {
+      "name": "Fuzzy Moth",
+      "icon": null
+    },
+    {
+      "name": "Grasshopper",
+      "icon": null
+    },
+    {
+      "name": "Mackerel",
+      "icon": null
+    },
+    {
+      "name": "Monster Shell",
+      "icon": null
+    },
+    {
+      "name": "Monster Hoop",
+      "icon": null
+    },
+    {
+      "name": "Pumpkin",
+      "icon": null
+    },
+    {
+      "name": "Red Snapper",
+      "icon": null
+    },
+    {
+      "name": "Rockroot",
+      "icon": null
+    },
+    {
+      "name": "Salmon",
+      "icon": null
+    },
+    {
+      "name": "Sardine",
+      "icon": null
+    },
+    {
+      "name": "Sod",
+      "icon": null
+    },
+    {
+      "name": "Tuna",
+      "icon": null
+    },
+    {
+      "name": "Alda Feather Pendant",
+      "icon": null
+    },
+    {
+      "name": "Jasmine Tea",
+      "icon": null
+    },
+    {
+      "name": "Poached Pear",
+      "icon": null
+    },
+    {
+      "name": "Blackberry Jam",
+      "icon": null
+    },
+    {
+      "name": "Blueberry Jam",
+      "icon": null
+    },
+    {
+      "name": "Chrysanthemum",
+      "icon": null
+    },
+    {
+      "name": "Marmalade",
+      "icon": null
+    },
+    {
+      "name": "Moon Fruit Cake",
+      "icon": null
+    },
+    {
+      "name": "Wildberry Jam",
+      "icon": null
+    },
+    {
+      "name": "Baked Sweetroot",
+      "icon": null
+    },
+    {
+      "name": "Braised Burdock",
+      "icon": null
+    },
+    {
+      "name": "Clam Chowder",
+      "icon": null
+    },
+    {
+      "name": "Fish Skewer",
+      "icon": null
+    },
+    {
+      "name": "Miner's Helmet",
+      "icon": null
+    },
+    {
+      "name": "Pan Fried Bream",
+      "icon": null
+    },
+    {
+      "name": "Shard Mass",
+      "icon": null
+    },
+    {
+      "name": "Canned Sardines",
+      "icon": null
+    },
+    {
+      "name": "Fish Stew",
+      "icon": null
+    },
+    {
+      "name": "Hot Toddy",
+      "icon": null
+    },
+    {
+      "name": "Pear",
+      "icon": null
+    },
+    {
+      "name": "Peat",
+      "icon": null
+    },
+    {
+      "name": "Pomegranate",
+      "icon": null
+    },
+    {
+      "name": "Caldosian Drinking Horn",
+      "icon": null
+    },
+    {
+      "name": "Crayfish Etouffee",
+      "icon": null
+    },
+    {
+      "name": "Crispy Fried Earthshroom",
+      "icon": null
+    },
+    {
+      "name": "Spicy Corn",
+      "icon": null
+    },
+    {
+      "name": "Wild Grapes",
+      "icon": null
+    },
+    {
+      "name": "Basil",
+      "icon": null
+    },
+    {
+      "name": "Chili Pepper",
+      "icon": null
+    },
+    {
+      "name": "Dried Squid",
+      "icon": null
+    },
+    {
+      "name": "Roasted Chestnuts",
+      "icon": null
+    },
+    {
+      "name": "Rock Salt",
+      "icon": null
+    },
+    {
+      "name": "Sesame Broccoli",
+      "icon": null
+    },
+    {
+      "name": "Spicy Water Chestnuts",
+      "icon": null
+    },
+    {
+      "name": "Tea",
+      "icon": null
+    },
+    {
+      "name": "Thyme",
+      "icon": null
+    },
+    {
+      "name": "Baked Potato",
+      "icon": null
+    },
+    {
+      "name": "Narrows Moss",
+      "icon": null
+    },
+    {
+      "name": "Watermelon",
+      "icon": null
+    },
+    {
+      "name": "Wheat",
+      "icon": null
+    },
+    {
+      "name": "Broccoli",
+      "icon": null
+    },
+    {
+      "name": "Cabbage",
+      "icon": null
+    },
+    {
+      "name": "Cauliflower",
+      "icon": null
+    },
+    {
+      "name": "Corn",
+      "icon": null
+    },
+    {
+      "name": "Cranberry",
+      "icon": null
+    },
+    {
+      "name": "Daikon Radish",
+      "icon": null
+    },
+    {
+      "name": "Onion",
+      "icon": null
+    },
+    {
+      "name": "Peas",
+      "icon": null
+    },
+    {
+      "name": "Potato",
+      "icon": null
+    },
+    {
+      "name": "Rice Stalk",
+      "icon": null
+    },
+    {
+      "name": "Snow Peas",
+      "icon": null
+    },
+    {
+      "name": "Strawberry",
+      "icon": null
+    },
+    {
+      "name": "Sugar Cane",
+      "icon": null
+    },
+    {
+      "name": "Sweet Potato",
+      "icon": null
+    },
+    {
+      "name": "Turnip",
+      "icon": null
+    },
+    {
+      "name": "Berry Bowl",
+      "icon": null
+    },
+    {
+      "name": "Deluxe Small Animal Feed",
+      "icon": null
+    },
+    {
+      "name": "Glowberry",
+      "icon": null
+    },
+    {
+      "name": "Grilled Corn",
+      "icon": null
+    },
+    {
+      "name": "Quality Small Animal Feed",
+      "icon": null
+    },
+    {
+      "name": "Shiny Bead",
+      "icon": null
+    },
+    {
+      "name": "Ultimate Small Animal Feed",
+      "icon": null
+    },
+    {
+      "name": "Blueberry",
+      "icon": null
+    },
+    {
+      "name": "Cherry",
+      "icon": null
+    },
+    {
+      "name": "Chestnut",
+      "icon": null
+    },
+    {
+      "name": "Coconut",
+      "icon": null
+    },
+    {
+      "name": "Grass Seed",
+      "icon": null
+    },
+    {
+      "name": "Moon Fruit",
+      "icon": null
+    },
+    {
+      "name": "Orange",
+      "icon": null
+    },
+    {
+      "name": "Wild Berries",
+      "icon": null
+    },
+    {
+      "name": "Wintergreen Berry",
+      "icon": null
+    },
+    {
+      "name": "Lavender Tea",
+      "icon": null
+    },
+    {
+      "name": "Curry Powder",
+      "icon": null
+    },
+    {
+      "name": "Oil",
+      "icon": null
+    },
+    {
+      "name": "Soy Sauce",
+      "icon": null
+    },
+    {
+      "name": "Coconut Milk",
+      "icon": null
+    },
+    {
+      "name": "Feather",
+      "icon": null
+    },
+    {
+      "name": "Shards",
+      "icon": null
+    },
+    {
+      "name": "Tomato Soup",
+      "icon": null
+    },
+    {
+      "name": "Amber Trapped Insect",
+      "icon": null
+    },
+    {
+      "name": "Bumblebee",
+      "icon": null
+    },
+    {
+      "name": "Copper Beetle",
+      "icon": null
+    },
+    {
+      "name": "Fairy Bee",
+      "icon": null
+    },
+    {
+      "name": "Jewel Beetle",
+      "icon": null
+    },
+    {
+      "name": "Rhinoceros Beetle",
+      "icon": null
+    },
+    {
+      "name": "Roly Poly",
+      "icon": null
+    },
+    {
+      "name": "Sea Scarab",
+      "icon": null
+    },
+    {
+      "name": "Strobe Firefly",
+      "icon": null
+    },
+    {
+      "name": "Ant",
+      "icon": null
+    },
+    {
+      "name": "Cave Shrimp",
+      "icon": null
+    },
+    {
+      "name": "Hummingbird Hawk Moth",
+      "icon": null
+    },
+    {
+      "name": "Inchworm",
+      "icon": null
+    },
+    {
+      "name": "Mistmoth",
+      "icon": null
+    },
+    {
+      "name": "Monarch Butterfly",
+      "icon": null
+    },
+    {
+      "name": "Orchid Mantis",
+      "icon": null
+    },
+    {
+      "name": "Pond Skater",
+      "icon": null
+    },
+    {
+      "name": "Praying Mantis",
+      "icon": null
+    },
+    {
+      "name": "Puddle Spider",
+      "icon": null
+    },
+    {
+      "name": "River Snail",
+      "icon": null
+    },
+    {
+      "name": "Snowball Beetle",
+      "icon": null
+    },
+    {
+      "name": "Worm",
+      "icon": null
+    },
+    {
+      "name": "Ancient Horn Circlet",
+      "icon": null
+    },
+    {
+      "name": "Lost Crown Of Aldaria",
+      "icon": null
+    },
+    {
+      "name": "Stone Shell",
+      "icon": null
+    },
+    {
+      "name": "Blue Conch Shell",
+      "icon": null
+    },
+    {
+      "name": "Pink Scallop Shell",
+      "icon": null
+    },
+    {
+      "name": "Sand Dollar",
+      "icon": null
+    },
+    {
+      "name": "Spirula Shell",
+      "icon": null
+    },
+    {
+      "name": "Ancient Gold Coin",
+      "icon": null
+    },
+    {
+      "name": "Fried Rice",
+      "icon": null
+    },
+    {
+      "name": "Onion Soup",
+      "icon": null
+    },
+    {
+      "name": "Peaches And Cream",
+      "icon": "Peaches_and_cream.webp"
+    },
+    {
+      "name": "Roasted Cauliflower",
+      "icon": null
+    },
+    {
+      "name": "Roasted Sweet Potato",
+      "icon": null
+    },
+    {
+      "name": "Sauteed Snow Peas",
+      "icon": null
+    },
+    {
+      "name": "Braised Carrots",
+      "icon": null
+    },
+    {
+      "name": "Salted Watermelon",
+      "icon": null
+    },
+    {
+      "name": "Simmered Daikon",
+      "icon": null
+    },
+    {
+      "name": "Sliced Turnip",
+      "icon": null
+    },
+    {
+      "name": "Strawberries And Cream",
+      "icon": null
+    },
+    {
+      "name": "Hard Boiled Egg",
+      "icon": null
+    },
+    {
+      "name": "Obsidian Blade",
+      "icon": null
+    },
+    {
+      "name": "Rock Statue",
+      "icon": null
+    },
+    {
+      "name": "Rock With A Hole",
+      "icon": null
+    },
+    {
+      "name": "Weightless Stone",
+      "icon": null
+    },
+    {
+      "name": "Giant Fish Scale",
+      "icon": null
+    },
+    {
+      "name": "Rubber Fish",
+      "icon": null
+    },
+    {
+      "name": "Grilled Eel Rice bowl",
+      "icon": null
+    },
+    {
+      "name": "Horseradish Salmon",
+      "icon": null
+    },
+    {
+      "name": "Mackerel Sashimi",
+      "icon": null
+    },
+    {
+      "name": "Pan-fried Bream",
+      "icon": null
+    },
+    {
+      "name": "Pan-fried Salmon",
+      "icon": null
+    },
+    {
+      "name": "Pan-fried Snapper",
+      "icon": null
+    },
+    {
+      "name": "Salmon Sashimi",
+      "icon": null
+    },
+    {
+      "name": "Smoked Trout Soup",
+      "icon": null
+    },
+    {
+      "name": "Tuna Sashimi",
+      "icon": null
+    },
+    {
+      "name": "Crystal Berries",
+      "icon": null
+    },
+    {
+      "name": "Chicken Egg",
+      "icon": null
+    },
+    {
+      "name": "Moonfruit",
+      "icon": null
+    },
+    {
+      "name": "Golden Alpaca Wool",
+      "icon": null
+    },
+    {
+      "name": "Golden Rabbit Hair",
+      "icon": null
+    },
+    {
+      "name": "Golden Sheep Wool",
+      "icon": null
+    },
+    {
+      "name": "Alpaca Wool",
+      "icon": null
+    },
+    {
+      "name": "Breath Of Fire",
+      "icon": null
+    },
+    {
+      "name": "Rabbit Hair",
+      "icon": null
+    },
+    {
+      "name": "Sheep Wool",
+      "icon": null
+    },
+    {
+      "name": "Coral",
+      "icon": null
+    },
+    {
+      "name": "Hard Wood",
+      "icon": null
+    },
+    {
+      "name": "Winter Stew",
+      "icon": null
+    },
+    {
+      "name": "Cranberry Juice",
+      "icon": null
+    },
+    {
+      "name": "Orange Juice",
+      "icon": null
+    },
+    {
+      "name": "Pomegranate Juice",
+      "icon": null
+    },
+    {
+      "name": "Steamed Broccoli",
+      "icon": null
+    },
+    {
+      "name": "Tide Salad",
+      "icon": null
+    },
+    {
+      "name": "Turnip And Cabbage Salad",
+      "icon": null
+    }
+  ],
+  "metadata": {
+    "totalItems": 415,
+    "itemsWithIcons": 55,
+    "itemsWithoutIcons": 360,
+    "lastUpdated": "2025-08-03T20:41:57.809Z"
+  }
+}

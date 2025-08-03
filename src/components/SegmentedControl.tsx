@@ -22,13 +22,16 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
           <button
             key={item.name}
             onClick={() => onItemSelect(item)}
-            className={`px-2 py-1 text-xs rounded-lg border transition-all duration-200 flex items-center gap-1 ${
+            className={`${
+              item.icon ? "px-1 py-1" : "px-2 py-1"
+            } text-xs rounded-lg border transition-all duration-200 flex items-center gap-1 ${
               isSelected
-                ? "bg-emerald-500 text-white border-emerald-500 shadow-md"
-                : "bg-white text-gray-700 border-gray-300 hover:border-emerald-300 hover:bg-emerald-50"
+                ? "bg-pink-500 text-white border-pink-500 shadow-md"
+                : "bg-white text-gray-700 border-gray-300 hover:border-pink-300 hover:bg-pink-50"
             }`}
             tabIndex={0}
             aria-label={`Select ${item.name} for ${characterName}`}
+            title={item.icon ? item.name : undefined}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
@@ -36,14 +39,15 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
               }
             }}
           >
-            {item.icon && (
+            {item.icon ? (
               <img
                 src={`/src/assets/items/${item.icon}`}
                 alt={item.name}
-                className="w-4 h-4 object-contain"
+                className="w-6 h-6 object-contain"
               />
+            ) : (
+              <span>{item.name}</span>
             )}
-            <span>{item.name}</span>
           </button>
         );
       })}

@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import charactersData from "../../characters_gifts.json";
+import charactersData from "../data/characters.json";
+import itemsData from "../data/items.json";
 
 export interface Item {
   name: string;
@@ -9,8 +10,8 @@ export interface Item {
 export interface Character {
   name: string;
   category: string;
-  loved_gifts: Item[];
-  liked_gifts: Item[];
+  loved_gifts: string[];
+  liked_gifts: string[];
   icon: string;
 }
 
@@ -21,7 +22,9 @@ export interface GiftSelection {
 
 interface GiftStore {
   characters: Character[];
+  items: Item[];
   giftSelections: GiftSelection[];
+  getItem: (itemName: string) => Item | undefined;
   selectGift: (characterName: string, gift: Item) => void;
   clearGiftSelection: (characterName: string) => void;
   getSelectedGift: (characterName: string) => Item | null;
@@ -29,7 +32,12 @@ interface GiftStore {
 
 export const useGiftStore = create<GiftStore>((set, get) => ({
   characters: charactersData.characters,
+  items: itemsData.items,
   giftSelections: [],
+
+  getItem: (itemName: string) => {
+    return get().items.find((item) => item.name === itemName);
+  },
 
   selectGift: (characterName: string, gift: Item) => {
     const { giftSelections } = get();
