@@ -7,7 +7,7 @@ const App: React.FC = () => {
   const [activeModule, setActiveModule] = useState<Module>("gift-tracker");
 
   const modules = [
-    { id: "gift-tracker" as Module, label: "Gift Tracker", icon: "🎁" },
+    { id: "gift-tracker" as Module, label: "Gift Planner", icon: "🎁" },
     {
       id: "quest-tracker" as Module,
       label: "Quest Tracker",

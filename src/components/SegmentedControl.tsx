@@ -14,26 +14,37 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
   onItemSelect,
   characterName,
 }) => {
+  const handleItemClick = (item: Item) => {
+    // Don't allow selection of items without icons (unreleased items)
+    if (!item.icon) return;
+    onItemSelect(item);
+  };
+
   return (
     <div className="flex flex-wrap gap-1 mt-2">
       {items.map((item) => {
         const isSelected = selectedItem?.name === item.name;
+        const isUnreleased = !item.icon;
+
         return (
           <button
             key={item.name}
-            onClick={() => onItemSelect(item)}
-            className={`${
-              item.icon ? "px-1 py-1" : "px-2 py-1"
-            } text-xs rounded-lg border transition-all duration-200 flex items-center gap-1 ${
-              isSelected
+            onClick={() => handleItemClick(item)}
+            disabled={isUnreleased}
+            className={`px-1 py-1 text-xs rounded-lg border transition-all duration-200 flex items-center gap-1 ${
+              isUnreleased
+                ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60"
+                : isSelected
                 ? "bg-pink-500 text-white border-pink-500 shadow-md"
                 : "bg-white text-gray-700 border-gray-300 hover:border-pink-300 hover:bg-pink-50"
             }`}
-            tabIndex={0}
-            aria-label={`Select ${item.name} for ${characterName}`}
-            title={item.icon ? item.name : undefined}
+            tabIndex={isUnreleased ? -1 : 0}
+            aria-label={`${isUnreleased ? "Unreleased item: " : "Select "}${
+              item.name
+            } for ${characterName}`}
+            title={isUnreleased ? `${item.name} (Unreleased)` : item.name}
             onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
+              if (!isUnreleased && (e.key === "Enter" || e.key === " ")) {
                 e.preventDefault();
                 onItemSelect(item);
               }
@@ -44,9 +55,27 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
                 src={`/src/assets/items/${item.icon}`}
                 alt={item.name}
                 className="w-6 h-6 object-contain"
+                onError={(e) => {
+                  // Fallback to question mark if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = "none";
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) {
+                    fallback.classList.remove("hidden");
+                  }
+                }}
               />
             ) : (
-              <span>{item.name}</span>
+              // Question mark icon for unreleased items
+              <div className="w-6 h-6 flex items-center justify-center text-gray-400 font-bold text-lg">
+                ?
+              </div>
+            )}
+            {/* Hidden fallback for image load errors */}
+            {item.icon && (
+              <div className="hidden w-6 h-6 flex items-center justify-center text-gray-400 font-bold text-lg">
+                ?
+              </div>
             )}
           </button>
         );

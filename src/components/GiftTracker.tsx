@@ -41,7 +41,7 @@ const GiftTracker: React.FC = () => {
     <div className="space-y-4">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-xl font-bold text-gray-800 mb-1">Gift Tracker</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-1">Gift Planner</h2>
         <p className="text-sm text-gray-600">
           Plan your gifting run by selecting one gift for each character
         </p>

@@ -230,7 +230,7 @@
     },
     {
       "name": "Breath of Fire",
-      "icon": null
+      "icon": "Breath_of_flame.webp"
     },
     {
       "name": "Essence Blossom",
@@ -238,95 +238,95 @@
     },
     {
       "name": "Hydrangea",
-      "icon": null
+      "icon": "Hydrangea.webp"
     },
     {
       "name": "Spring Galette",
-      "icon": null
+      "icon": "Spring_galette.webp"
     },
     {
       "name": "Catmint",
-      "icon": null
+      "icon": "Catmint.webp"
     },
     {
       "name": "Celosia",
-      "icon": null
+      "icon": "Celosia.webp"
     },
     {
       "name": "Chysanthemum",
-      "icon": null
+      "icon": "Chrysanthemum.webp"
     },
     {
       "name": "Cosmos",
-      "icon": null
+      "icon": "Cosmos.webp"
     },
     {
       "name": "Crocus",
-      "icon": null
+      "icon": "Crocus.webp"
     },
     {
       "name": "Daffodil",
-      "icon": null
+      "icon": "Daffodil.webp"
     },
     {
       "name": "Daisy",
-      "icon": null
+      "icon": "Daisy.webp"
     },
     {
       "name": "Dandelion",
-      "icon": null
+      "icon": "Dandelion.webp"
     },
     {
       "name": "Iris",
-      "icon": null
+      "icon": "Iris.webp"
     },
     {
       "name": "Lilac",
-      "icon": null
+      "icon": "Lilac.webp"
     },
     {
       "name": "Marigold",
-      "icon": null
+      "icon": "Marigold.webp"
     },
     {
-      "name": "Poinsetta",
-      "icon": null
+      "name": "Poinsettia",
+      "icon": "Poinsettia.webp"
     },
     {
       "name": "Rose Tea",
-      "icon": null
+      "icon": "Rose_tea.webp"
     },
     {
       "name": "Spring Salad",
-      "icon": null
+      "icon": "Spring_salad.png"
     },
     {
       "name": "Sunflower",
-      "icon": null
+      "icon": "Sunflower.webp"
     },
     {
       "name": "Viola",
-      "icon": null
+      "icon": "Viola.webp"
     },
     {
       "name": "Chocolate Cake",
-      "icon": null
+      "icon": "Chocolate_cake.webp"
     },
     {
       "name": "Coconut Cream Pie",
-      "icon": null
+      "icon": "Coconut_cream_pie.webp"
     },
     {
       "name": "Glowberry Cookies",
-      "icon": null
+      "icon": "Glowberry_cookies.webp"
     },
     {
       "name": "Ice Cream Sundae",
-      "icon": null
+      "icon": "Ice_cream_sundae.webp"
     },
     {
       "name": "Mont Blanc",
-      "icon": null
+      "icon": "Mont_blanc.webp"
     },
     {
       "name": "Spell Fruit Parfait",
@@ -334,43 +334,43 @@
     },
     {
       "name": "Strawberry Shortcake",
-      "icon": null
+      "icon": "Strawberry_shortcake.webp"
     },
     {
       "name": "Apple Pie",
-      "icon": null
+      "icon": "Apple_pie.webp"
     },
     {
       "name": "Berries and Cream",
-      "icon": null
+      "icon": "Berries_and_cream.webp"
     },
     {
       "name": "Candied Strawberries",
-      "icon": null
+      "icon": "Candied_strawberries.webp"
     },
     {
       "name": "Caramelized Moon Fruit",
-      "icon": null
+      "icon": "Caramelized_moon_fruit.webp"
     },
     {
       "name": "Caramel Candy",
-      "icon": null
+      "icon": "Caramel_candy.webp"
     },
     {
       "name": "Cherry Cobbler",
-      "icon": null
+      "icon": "Cherry_cobbler.webp"
     },
     {
       "name": "Cherry Tart",
-      "icon": null
+      "icon": "Cherry_tart.webp"
     },
     {
       "name": "Chocolate",
-      "icon": null
+      "icon": "Chocolate.webp"
     },
     {
       "name": "Crystal Berry Pie",
-      "icon": null
+      "icon": "Crystal_berry_pie.webp"
     },
     {
       "name": "Peaches and Cream",
@@ -378,99 +378,95 @@
     },
     {
       "name": "Pomegranate Sorbet",
-      "icon": null
+      "icon": "Pomegranate_sorbet.webp"
     },
     {
       "name": "Pudding",
-      "icon": null
+      "icon": "Pudding.webp"
     },
     {
       "name": "Roasted Rice Tea",
-      "icon": null
+      "icon": "Roasted_rice_tea.webp"
     },
     {
       "name": "Strawberries and Cream",
-      "icon": null
+      "icon": "Strawberries_and_cream.webp"
     },
     {
       "name": "Sweet Sesame Balls",
-      "icon": null
+      "icon": "Sweet_sesame_balls.webp"
     },
     {
       "name": "Wintergreen Ice Cream",
-      "icon": null
-    },
-    {
-      "name": "Ancient Royal Sceptar",
-      "icon": null
+      "icon": "Wintergreen_ice_cream.webp"
     },
     {
       "name": "Black Tablet",
-      "icon": null
+      "icon": "Black_tablet.webp"
     },
     {
       "name": "Fish Tacos",
-      "icon": null
+      "icon": "Fish_tacos.webp"
     },
     {
       "name": "Hardened Essence",
       "icon": null
     },
     {
-      "name": "Moonfruit Cake",
-      "icon": null
+      "name": "Moon Fruit Cake",
+      "icon": "Moon_fruit_cake.webp"
     },
     {
       "name": "Mushroom Brew",
-      "icon": null
+      "icon": "Mushroom_brew.webp"
     },
     {
       "name": "Pizza",
-      "icon": null
+      "icon": "Pizza.webp"
     },
     {
       "name": "Crunchy Chickpeas",
-      "icon": null
+      "icon": "Crunchy_chickpeas.webp"
     },
     {
       "name": "Crystal",
-      "icon": null
+      "icon": "Crystal.webp"
     },
     {
       "name": "Frog",
-      "icon": null
+      "icon": "Frog.webp"
     },
     {
       "name": "Latte",
-      "icon": null
+      "icon": "Latte.webp"
     },
     {
       "name": "Monster Powder",
-      "icon": null
+      "icon": "Monster_powder.webp"
     },
     {
       "name": "Morel Mushroom",
-      "icon": null
+      "icon": "Morel_mushroom.webp"
     },
     {
       "name": "Nettle",
-      "icon": null
+      "icon": "Nettle.webp"
     },
     {
       "name": "Newt",
-      "icon": null
+      "icon": "Newt.webp"
     },
     {
       "name": "Night Queen",
-      "icon": null
+      "icon": "Night_queen.webp"
     },
     {
       "name": "Red Toadstool",
-      "icon": null
+      "icon": "Red_toadstool.webp"
     },
     {
       "name": "Shadow Flower",
-      "icon": null
+      "icon": "Shadow_flower.webp"
     },
     {
       "name": "Spell Fruit",
@@ -478,171 +474,167 @@
     },
     {
       "name": "Toasted Sunflower Seeds",
-      "icon": null
+      "icon": "Toasted_sunflower_seeds.webp"
     },
     {
       "name": "Water Chestnut Fritters",
-      "icon": null
+      "icon": "Water_chestnut_fritters.webp"
     },
     {
       "name": "Golden Butter",
-      "icon": null
+      "icon": "Golden_butter.webp"
     },
     {
       "name": "Golden Cheese",
-      "icon": null
+      "icon": "Golden_cheese.webp"
     },
     {
       "name": "Golden Duck Egg",
-      "icon": null
+      "icon": "Golden_duck_egg.webp"
     },
     {
       "name": "Golden Duck Mayonnaise",
-      "icon": null
+      "icon": "Golden_duck_mayonnaise.webp"
     },
     {
       "name": "Golden Egg",
-      "icon": null
+      "icon": "Golden_egg.webp"
     },
     {
       "name": "Golden Mayonnaise",
-      "icon": null
+      "icon": "Golden_mayonnaise.webp"
     },
     {
       "name": "Golden Milk",
-      "icon": null
+      "icon": "Golden_milk.webp"
     },
     {
       "name": "Stone Horse",
-      "icon": null
+      "icon": "Stone_horse.webp"
     },
     {
       "name": "Vegetable Quiche",
-      "icon": null
+      "icon": "Vegetable_quiche.webp"
     },
     {
       "name": "Butter",
-      "icon": null
+      "icon": "Butter.webp"
     },
     {
       "name": "Cheese",
-      "icon": null
+      "icon": "Cheese.webp"
     },
     {
       "name": "Duck Egg",
-      "icon": null
+      "icon": "Duck_egg.webp"
     },
     {
       "name": "Duck Mayonnaise",
-      "icon": null
-    },
-    {
-      "name": "Egg",
-      "icon": null
+      "icon": "Duck_mayonnaise.webp"
     },
     {
       "name": "Loaded Baked Potato",
-      "icon": null
+      "icon": "Loaded_baked_potato.webp"
     },
     {
       "name": "Mayonnaise",
-      "icon": null
+      "icon": "Mayonnaise.webp"
     },
     {
       "name": "Milk",
-      "icon": null
+      "icon": "Milk.webp"
     },
     {
       "name": "Mushroom Steak Dinner",
-      "icon": null
+      "icon": "Mushroom_steak_dinner.webp"
     },
     {
       "name": "Quiche",
-      "icon": null
+      "icon": "Quiche.webp"
     },
     {
       "name": "Sweet Potato Pie",
-      "icon": null
+      "icon": "Sweet_potato_pie.webp"
     },
     {
       "name": "Vegetable Pot Pie",
-      "icon": null
+      "icon": "Vegetable_pot_pie.webp"
     },
     {
       "name": "Breaded Catfish",
-      "icon": null
+      "icon": "Breaded_catfish.webp"
     },
     {
       "name": "Cabbage Slaw",
-      "icon": null
+      "icon": "Cabbage_slaw.webp"
     },
     {
       "name": "Incredibly Hot Pot",
-      "icon": null
+      "icon": "Incredibly_hot_pot.webp"
     },
     {
       "name": "Rosemary Garlic Noodles",
-      "icon": null
+      "icon": "Rosemary_garlic_noodles.webp"
     },
     {
       "name": "Seafood Boil",
-      "icon": null
+      "icon": "Seafood_boil.webp"
     },
     {
       "name": "Seafood Snow Pea Noodles",
-      "icon": null
+      "icon": "Seafood_snow_pea_noodles.webp"
     },
     {
       "name": "Sushi Platter",
-      "icon": null
+      "icon": "Sushi_platter.png"
     },
     {
       "name": "Cod with Thyme",
-      "icon": null
+      "icon": "Cod_with_thyme.webp"
     },
     {
       "name": "Deep Sea Soup",
-      "icon": null
+      "icon": "Deep_sea_soup.webp"
     },
     {
       "name": "Flour",
-      "icon": null
+      "icon": "Flour.webp"
     },
     {
       "name": "Garlic",
-      "icon": null
+      "icon": "Garlic.webp"
     },
     {
       "name": "Garlic Bread",
-      "icon": null
+      "icon": "Garlic_bread.webp"
     },
     {
       "name": "Grilled Cheese",
-      "icon": null
+      "icon": "Grilled_cheese.webp"
     },
     {
       "name": "Iced Coffee",
-      "icon": null
+      "icon": "Iced_coffee.webp"
     },
     {
       "name": "Miner's Mushroom Stew",
-      "icon": null
+      "icon": "Miner's_mushroom_stew.webp"
     },
     {
       "name": "Rice",
-      "icon": null
+      "icon": "Rice.webp"
     },
     {
       "name": "Sugar",
-      "icon": null
+      "icon": "Sugar.webp"
     },
     {
       "name": "Turnip and Potato Gratin",
-      "icon": null
+      "icon": "Turnip_and_potato_gratin.webp"
     },
     {
       "name": "Upper Mines Mushroom",
-      "icon": null
+      "icon": "Upper_mines_mushroom.webp"
     },
     {
       "name": "Dragon-Forged Bracelet",
@@ -650,15 +642,15 @@
     },
     {
       "name": "Meteorite",
-      "icon": null
+      "icon": "Meteorite.webp"
     },
     {
       "name": "Perfect Copper Ore",
-      "icon": null
+      "icon": "Perfect_copper_ore.webp"
     },
     {
       "name": "Perfect Iron Ore",
-      "icon": null
+      "icon": "Perfect_iron_ore.webp"
     },
     {
       "name": "Perfect Mistril Ore",
@@ -666,159 +658,159 @@
     },
     {
       "name": "Perfect Silver Ore",
-      "icon": null
+      "icon": "Perfect_silver_ore.webp"
     },
     {
       "name": "Beer",
-      "icon": null
+      "icon": "Beer.webp"
     },
     {
       "name": "Copper Ingot",
-      "icon": null
+      "icon": "Copper_Ingot.webp"
     },
     {
       "name": "Copper Ore",
-      "icon": null
+      "icon": "Copper_Ore.webp"
     },
     {
       "name": "Grilled Eel Rice Bowl",
-      "icon": null
+      "icon": "Grilled_eel_rice_bowl.webp"
     },
     {
       "name": "Hot Chocolate",
-      "icon": null
+      "icon": "Hot_chocolate.webp"
     },
     {
       "name": "Iron Ingot",
-      "icon": null
+      "icon": "Iron_Ingot.webp"
     },
     {
       "name": "Iron Ore",
-      "icon": null
+      "icon": "Iron_Ore.webp"
     },
     {
       "name": "Mocha",
-      "icon": null
+      "icon": "Mocha.webp"
     },
     {
       "name": "Perch Risotto",
-      "icon": null
+      "icon": "Perch_risotto.webp"
     },
     {
       "name": "Red Snapper Sushi",
-      "icon": null
+      "icon": "Red_snapper_sushi.webp"
     },
     {
       "name": "Sea Bream Rice",
-      "icon": null
+      "icon": "Sea_bream_rice.webp"
     },
     {
       "name": "Sesame Tuna Bowl",
-      "icon": null
+      "icon": "Sesame_tuna_bowl.webp"
     },
     {
       "name": "Silver Ingot",
-      "icon": null
+      "icon": "Silver_Ingot.webp"
     },
     {
       "name": "Silver Ore",
-      "icon": null
+      "icon": "Silver_Ore.webp"
     },
     {
       "name": "Spicy Crab Sushi",
-      "icon": null
+      "icon": "Spicy_crab_sushi.webp"
     },
     {
       "name": "Golden Bristle",
-      "icon": null
+      "icon": "Golden_bristle.webp"
     },
     {
       "name": "Golden Bull Horn",
-      "icon": null
+      "icon": "Golden_bull_horn.webp"
     },
     {
       "name": "Golden Duck Feather",
-      "icon": null
+      "icon": "Golden_duck_feather.webp"
     },
     {
       "name": "Golden Feather",
-      "icon": null
+      "icon": "Golden_feather.webp"
     },
     {
       "name": "Golden Horse Hair",
-      "icon": null
+      "icon": "Golden_horse_hair.webp"
     },
     {
-      "name": "Hardwood",
-      "icon": null
+      "name": "Hard Wood",
+      "icon": "Hard_wood.webp"
     },
     {
       "name": "Lobster Roll",
-      "icon": null
+      "icon": "Lobster_roll.webp"
     },
     {
       "name": "Veggie Sub Sandwich",
-      "icon": null
+      "icon": "Veggie_sub_sandwich.webp"
     },
     {
       "name": "Wood",
-      "icon": null
+      "icon": "Wood.webp"
     },
     {
       "name": "Bread",
-      "icon": null
+      "icon": "Bread.webp"
     },
     {
       "name": "Bristle",
-      "icon": null
+      "icon": "Bristle.webp"
     },
     {
       "name": "Bull Horn",
-      "icon": null
+      "icon": "Bull_horn.webp"
     },
     {
       "name": "Clay",
-      "icon": null
+      "icon": "Clay.webp"
     },
     {
       "name": "Cranberry Orange Scone",
-      "icon": null
+      "icon": "Cranberry_orange_scone.webp"
     },
     {
       "name": "Duck Feather",
-      "icon": null
+      "icon": "Duck_feather.webp"
     },
     {
       "name": "Glass",
-      "icon": null
+      "icon": "Glass.webp"
     },
     {
       "name": "Horse Hair",
-      "icon": null
+      "icon": "Horse_hair.webp"
     },
     {
       "name": "Obsidian",
-      "icon": null
+      "icon": "Obsidian.webp"
     },
     {
       "name": "Rooster Feather",
-      "icon": null
+      "icon": "Rooster_feather.webp"
     },
     {
       "name": "Stone",
-      "icon": null
+      "icon": "Stone.webp"
     },
     {
       "name": "Beet",
-      "icon": null
+      "icon": "Beet.webp"
     },
     {
       "name": "Beet Salad",
-      "icon": null
+      "icon": "Beet_salad.webp"
     },
     {
       "name": "Beet Soup",
-      "icon": null
+      "icon": "Beet_soup.webp"
     },
     {
       "name": "Dragon Scale",
@@ -826,187 +818,183 @@
     },
     {
       "name": "Harvest Plate",
-      "icon": null
+      "icon": "Harvest_plate.webp"
     },
     {
       "name": "Summer Salad",
-      "icon": null
+      "icon": "Summer_salad.webp"
     },
     {
       "name": "Cucumber",
-      "icon": null
+      "icon": "Cucumber.webp"
     },
     {
       "name": "Cucumber Salad",
-      "icon": null
+      "icon": "Cucumber_salad.webp"
     },
     {
       "name": "Green Tea",
-      "icon": null
+      "icon": "Green_Tea.webp"
     },
     {
       "name": "Herb Salad",
-      "icon": null
+      "icon": "Herb_salad.webp"
     },
     {
       "name": "Honey",
-      "icon": null
+      "icon": "Honey.webp"
     },
     {
       "name": "Pan Fried Salmon",
-      "icon": null
+      "icon": "Pan_fried_salmon.webp"
     },
     {
-      "name": "Rosehip",
-      "icon": null
+      "name": "Rose Hip",
+      "icon": "Rose_hip.webp"
     },
     {
       "name": "Rosehip Jam",
-      "icon": null
+      "icon": "Rosehip_jam.webp"
     },
     {
       "name": "Rosemary",
-      "icon": null
+      "icon": "Rosemary.webp"
     },
     {
       "name": "Seaweed",
-      "icon": null
+      "icon": "Seaweed.webp"
     },
     {
       "name": "Seaweed Salad",
-      "icon": null
+      "icon": "Seaweed_salad.webp"
     },
     {
       "name": "Sweetroot",
-      "icon": null
+      "icon": "Sweetroot.webp"
     },
     {
       "name": "Underseaweed",
-      "icon": null
+      "icon": "Underseaweed.webp"
     },
     {
       "name": "Alda Bronze Sword",
-      "icon": null
+      "icon": "Alda_bronze_sword.webp"
     },
     {
       "name": "Aldarian Sword",
-      "icon": null
+      "icon": "Aldarian_sword.webp"
     },
     {
       "name": "Apple Juice",
-      "icon": null
+      "icon": "Apple_juice.webp"
     },
     {
       "name": "Bullfrog",
-      "icon": null
+      "icon": "Bullfrog.webp"
     },
     {
       "name": "Caldosian Sword",
-      "icon": null
+      "icon": "Caldosian_sword.webp"
     },
     {
       "name": "Hermit Crab",
-      "icon": null
+      "icon": "Hermit_crab.webp"
     },
     {
       "name": "Jam Sandwich",
-      "icon": null
+      "icon": "Jam_sandwich.webp"
     },
     {
       "name": "Apple",
-      "icon": null
+      "icon": "Apple.webp"
     },
     {
       "name": "Blackberry",
-      "icon": null
+      "icon": "Blackberry.webp"
     },
     {
-      "name": "Cattail",
-      "icon": null
+      "name": "Cattail Fluff",
+      "icon": "Cattail_fluff.webp"
     },
     {
       "name": "Grape Juice",
-      "icon": null
+      "icon": "Grape_juice.webp"
     },
     {
       "name": "Lightning Dragonfly",
-      "icon": null
+      "icon": "Lightning_dragonfly.webp"
     },
     {
       "name": "Monster Cookie",
-      "icon": null
+      "icon": "Monster_cookie.webp"
     },
     {
       "name": "Snail",
-      "icon": null
+      "icon": "Snail.webp"
     },
     {
       "name": "Trail Mix",
-      "icon": null
+      "icon": "Trail_mix.webp"
     },
     {
       "name": "Turtle",
-      "icon": null
-    },
-    {
-      "name": "Hardboiled Egg",
-      "icon": null
+      "icon": "Turtle.webp"
     },
     {
       "name": "Catfish",
-      "icon": null
+      "icon": "Catfish.webp"
     },
     {
       "name": "Crystalline Cricket",
-      "icon": null
+      "icon": "Crystalline_cricket.webp"
     },
     {
       "name": "Petrified Wood",
-      "icon": null
+      "icon": "Petrified_wood.webp"
     },
     {
       "name": "Tiny Dinosaur Skeleton",
-      "icon": null
+      "icon": "Tiny_dinosaur_skeleton.webp"
     },
     {
       "name": "Butterfly",
-      "icon": null
+      "icon": "Butterfly.webp"
     },
     {
       "name": "Carrot",
-      "icon": null
+      "icon": "Carrot.webp"
     },
     {
       "name": "Cicada",
-      "icon": null
+      "icon": "Cicada.webp"
     },
     {
       "name": "Cod",
-      "icon": null
+      "icon": "Cod.webp"
     },
     {
       "name": "Cricket",
-      "icon": null
+      "icon": "Cricket.webp"
     },
     {
       "name": "Firefly",
-      "icon": null
+      "icon": "Firefly.webp"
     },
     {
       "name": "Fuzzy Moth",
-      "icon": null
+      "icon": "Fuzzy_moth.webp"
     },
     {
       "name": "Grasshopper",
-      "icon": null
+      "icon": "Grasshopper.webp"
     },
     {
       "name": "Mackerel",
-      "icon": null
+      "icon": "Mackerel.webp"
     },
     {
       "name": "Monster Shell",
-      "icon": null
+      "icon": "Monster_shell.webp"
     },
     {
       "name": "Monster Hoop",
@@ -1014,475 +1002,467 @@
     },
     {
       "name": "Pumpkin",
-      "icon": null
+      "icon": "Pumpkin.webp"
     },
     {
       "name": "Red Snapper",
-      "icon": null
+      "icon": "Red_snapper.webp"
     },
     {
       "name": "Rockroot",
-      "icon": null
+      "icon": "Rockroot.webp"
     },
     {
       "name": "Salmon",
-      "icon": null
+      "icon": "Salmon.webp"
     },
     {
       "name": "Sardine",
-      "icon": null
+      "icon": "Sardine.webp"
     },
     {
       "name": "Sod",
-      "icon": null
+      "icon": "Sod.webp"
     },
     {
       "name": "Tuna",
-      "icon": null
+      "icon": "Tuna.webp"
     },
     {
       "name": "Alda Feather Pendant",
-      "icon": null
+      "icon": "Alda_feather_pendant.webp"
     },
     {
       "name": "Jasmine Tea",
-      "icon": null
+      "icon": "Jasmine_tea.webp"
     },
     {
       "name": "Poached Pear",
-      "icon": null
+      "icon": "Poached_pear.webp"
     },
     {
       "name": "Blackberry Jam",
-      "icon": null
+      "icon": "Blackberry_jam.webp"
     },
     {
       "name": "Blueberry Jam",
-      "icon": null
+      "icon": "Blueberry_jam.webp"
     },
     {
       "name": "Chrysanthemum",
-      "icon": null
+      "icon": "Chrysanthemum.webp"
     },
     {
       "name": "Marmalade",
-      "icon": null
+      "icon": "Marmalade.webp"
     },
     {
       "name": "Moon Fruit Cake",
-      "icon": null
+      "icon": "Moon_fruit_cake.webp"
     },
     {
-      "name": "Wildberry Jam",
-      "icon": null
+      "name": "Wild Berry Jam",
+      "icon": "Wild_berry_jam.webp"
     },
     {
       "name": "Baked Sweetroot",
-      "icon": null
+      "icon": "Baked_sweetroot.webp"
     },
     {
       "name": "Braised Burdock",
-      "icon": null
+      "icon": "Braised_burdock.webp"
     },
     {
       "name": "Clam Chowder",
-      "icon": null
+      "icon": "Clam_chowder.webp"
     },
     {
       "name": "Fish Skewer",
-      "icon": null
+      "icon": "Fish_skewer.webp"
     },
     {
       "name": "Miner's Helmet",
-      "icon": null
+      "icon": "Miner's_helmet.webp"
     },
     {
       "name": "Pan Fried Bream",
-      "icon": null
+      "icon": "Pan_fried_bream.webp"
     },
     {
       "name": "Shard Mass",
-      "icon": null
+      "icon": "Shard_mass.webp"
     },
     {
       "name": "Canned Sardines",
-      "icon": null
+      "icon": "Canned_sardines.webp"
     },
     {
       "name": "Fish Stew",
-      "icon": null
+      "icon": "Fish_stew.webp"
     },
     {
       "name": "Hot Toddy",
-      "icon": null
+      "icon": "Hot_toddy.webp"
     },
     {
       "name": "Pear",
-      "icon": null
+      "icon": "Pear.webp"
     },
     {
       "name": "Peat",
-      "icon": null
+      "icon": "Peat.webp"
     },
     {
       "name": "Pomegranate",
-      "icon": null
+      "icon": "Pomegranate.webp"
     },
     {
       "name": "Caldosian Drinking Horn",
-      "icon": null
+      "icon": "Caldosian_drinking_horn.webp"
     },
     {
       "name": "Crayfish Etouffee",
-      "icon": null
+      "icon": "Crayfish_etouffee.webp"
     },
     {
       "name": "Crispy Fried Earthshroom",
-      "icon": null
+      "icon": "Crispy_fried_earthshroom.webp"
     },
     {
       "name": "Spicy Corn",
-      "icon": null
+      "icon": "Spicy_corn.png"
     },
     {
       "name": "Wild Grapes",
-      "icon": null
+      "icon": "Wild_grapes.webp"
     },
     {
       "name": "Basil",
-      "icon": null
+      "icon": "Basil.webp"
     },
     {
       "name": "Chili Pepper",
-      "icon": null
+      "icon": "Chili_pepper.webp"
     },
     {
       "name": "Dried Squid",
-      "icon": null
+      "icon": "Dried_squid.webp"
     },
     {
       "name": "Roasted Chestnuts",
-      "icon": null
+      "icon": "Roasted_chestnuts.webp"
     },
     {
       "name": "Rock Salt",
-      "icon": null
+      "icon": "Rock_salt.webp"
     },
     {
       "name": "Sesame Broccoli",
-      "icon": null
+      "icon": "Sesame_broccoli.webp"
     },
     {
       "name": "Spicy Water Chestnuts",
-      "icon": null
+      "icon": "Spicy_water_chestnuts.webp"
     },
     {
       "name": "Tea",
-      "icon": null
+      "icon": "Tea.webp"
     },
     {
       "name": "Thyme",
-      "icon": null
+      "icon": "Thyme.webp"
     },
     {
       "name": "Baked Potato",
-      "icon": null
+      "icon": "Baked_potato.webp"
     },
     {
       "name": "Narrows Moss",
-      "icon": null
+      "icon": "Narrows_moss.webp"
     },
     {
       "name": "Watermelon",
-      "icon": null
+      "icon": "Watermelon.webp"
     },
     {
       "name": "Wheat",
-      "icon": null
+      "icon": "Wheat.webp"
     },
     {
       "name": "Broccoli",
-      "icon": null
+      "icon": "Broccoli.webp"
     },
     {
       "name": "Cabbage",
-      "icon": null
+      "icon": "Cabbage.webp"
     },
     {
       "name": "Cauliflower",
-      "icon": null
+      "icon": "Cauliflower.webp"
     },
     {
       "name": "Corn",
-      "icon": null
+      "icon": "Corn.webp"
     },
     {
       "name": "Cranberry",
-      "icon": null
+      "icon": "Cranberry.webp"
     },
     {
       "name": "Daikon Radish",
-      "icon": null
+      "icon": "Daikon_radish.webp"
     },
     {
       "name": "Onion",
-      "icon": null
+      "icon": "Onion.webp"
     },
     {
       "name": "Peas",
-      "icon": null
+      "icon": "Peas.webp"
     },
     {
       "name": "Potato",
-      "icon": null
+      "icon": "Potato.webp"
     },
     {
       "name": "Rice Stalk",
-      "icon": null
+      "icon": "Rice_stalk.webp"
     },
     {
       "name": "Snow Peas",
-      "icon": null
+      "icon": "Snow_peas.webp"
     },
     {
       "name": "Strawberry",
-      "icon": null
+      "icon": "Strawberry.webp"
     },
     {
       "name": "Sugar Cane",
-      "icon": null
+      "icon": "Sugar_cane.webp"
     },
     {
       "name": "Sweet Potato",
-      "icon": null
+      "icon": "Sweet_potato.webp"
     },
     {
       "name": "Turnip",
-      "icon": null
+      "icon": "Turnip.webp"
     },
     {
       "name": "Berry Bowl",
-      "icon": null
+      "icon": "Berry_bowl.webp"
     },
     {
       "name": "Deluxe Small Animal Feed",
-      "icon": null
+      "icon": "Deluxe_small_animal_feed.webp"
     },
     {
       "name": "Glowberry",
-      "icon": null
+      "icon": "Glowberry.webp"
     },
     {
       "name": "Grilled Corn",
-      "icon": null
+      "icon": "Grilled_corn.webp"
     },
     {
       "name": "Quality Small Animal Feed",
-      "icon": null
+      "icon": "Quality_small_animal_feed.webp"
     },
     {
       "name": "Shiny Bead",
-      "icon": null
+      "icon": "Shiny_bead.webp"
     },
     {
       "name": "Ultimate Small Animal Feed",
-      "icon": null
+      "icon": "Ultimate_small_animal_feed.webp"
     },
     {
       "name": "Blueberry",
-      "icon": null
+      "icon": "Blueberry.webp"
     },
     {
       "name": "Cherry",
-      "icon": null
+      "icon": "Cherry.webp"
     },
     {
       "name": "Chestnut",
-      "icon": null
+      "icon": "Chestnut.webp"
     },
     {
       "name": "Coconut",
-      "icon": null
+      "icon": "Coconut.webp"
     },
     {
       "name": "Grass Seed",
-      "icon": null
+      "icon": "Grass_seed.webp"
     },
     {
       "name": "Moon Fruit",
-      "icon": null
+      "icon": "Moon_fruit.webp"
     },
     {
       "name": "Orange",
-      "icon": null
+      "icon": "Orange.webp"
     },
     {
       "name": "Wild Berries",
-      "icon": null
+      "icon": "Wild_berries.webp"
     },
     {
       "name": "Wintergreen Berry",
-      "icon": null
+      "icon": "Wintergreen_berry.webp"
     },
     {
       "name": "Lavender Tea",
-      "icon": null
+      "icon": "Lavender_tea.webp"
     },
     {
       "name": "Curry Powder",
-      "icon": null
+      "icon": "Curry_powder.webp"
     },
     {
       "name": "Oil",
-      "icon": null
+      "icon": "Oil.webp"
     },
     {
       "name": "Soy Sauce",
-      "icon": null
+      "icon": "Soy_sauce.webp"
     },
     {
       "name": "Coconut Milk",
-      "icon": null
-    },
-    {
-      "name": "Feather",
-      "icon": null
+      "icon": "Coconut_milk.webp"
     },
     {
       "name": "Shards",
-      "icon": null
+      "icon": "Shards.webp"
     },
     {
       "name": "Tomato Soup",
-      "icon": null
+      "icon": "Tomato_soup.webp"
     },
     {
       "name": "Amber Trapped Insect",
-      "icon": null
+      "icon": "Amber_trapped_insect.webp"
     },
     {
       "name": "Bumblebee",
-      "icon": null
-    },
-    {
-      "name": "Copper Beetle",
-      "icon": null
+      "icon": "Bumblebee.webp"
     },
     {
       "name": "Fairy Bee",
-      "icon": null
+      "icon": "Fairy_bee.webp"
     },
     {
       "name": "Jewel Beetle",
-      "icon": null
+      "icon": "Jewel_beetle.webp"
     },
     {
       "name": "Rhinoceros Beetle",
-      "icon": null
+      "icon": "Rhinoceros_beetle.webp"
     },
     {
       "name": "Roly Poly",
-      "icon": null
+      "icon": "Roly_poly.webp"
     },
     {
       "name": "Sea Scarab",
-      "icon": null
+      "icon": "Sea_scarab.webp"
     },
     {
       "name": "Strobe Firefly",
-      "icon": null
+      "icon": "Strobe_firefly.webp"
     },
     {
       "name": "Ant",
-      "icon": null
+      "icon": "Ant.webp"
     },
     {
       "name": "Cave Shrimp",
-      "icon": null
+      "icon": "Cave_shrimp.webp"
     },
     {
       "name": "Hummingbird Hawk Moth",
-      "icon": null
+      "icon": "Hummingbird_hawk_moth.webp"
     },
     {
       "name": "Inchworm",
-      "icon": null
+      "icon": "Inchworm.webp"
     },
     {
       "name": "Mistmoth",
-      "icon": null
+      "icon": "Mistmoth.webp"
     },
     {
       "name": "Monarch Butterfly",
-      "icon": null
+      "icon": "Monarch_butterfly.webp"
     },
     {
       "name": "Orchid Mantis",
-      "icon": null
+      "icon": "Orchid_mantis.webp"
     },
     {
       "name": "Pond Skater",
-      "icon": null
+      "icon": "Pond_Skater.webp"
     },
     {
       "name": "Praying Mantis",
-      "icon": null
+      "icon": "Praying_mantis.webp"
     },
     {
       "name": "Puddle Spider",
-      "icon": null
+      "icon": "Puddle_spider.webp"
     },
     {
       "name": "River Snail",
-      "icon": null
+      "icon": "River_snail.webp"
     },
     {
       "name": "Snowball Beetle",
-      "icon": null
+      "icon": "Snowball_beetle.webp"
     },
     {
       "name": "Worm",
-      "icon": null
+      "icon": "Worm.webp"
     },
     {
       "name": "Ancient Horn Circlet",
-      "icon": null
+      "icon": "Ancient_horn_circlet.webp"
     },
     {
       "name": "Lost Crown Of Aldaria",
-      "icon": null
+      "icon": "Lost_crown_of_aldaria.webp"
     },
     {
       "name": "Stone Shell",
-      "icon": null
+      "icon": "Stone_shell.webp"
     },
     {
       "name": "Blue Conch Shell",
-      "icon": null
+      "icon": "Blue_conch_shell.webp"
     },
     {
       "name": "Pink Scallop Shell",
-      "icon": null
+      "icon": "Pink_scallop_shell.webp"
     },
     {
       "name": "Sand Dollar",
-      "icon": null
+      "icon": "Sand_dollar.webp"
     },
     {
       "name": "Spirula Shell",
-      "icon": null
+      "icon": "Spirula_shell.webp"
     },
     {
       "name": "Ancient Gold Coin",
-      "icon": null
+      "icon": "Ancient_gold_coin.webp"
     },
     {
       "name": "Fried Rice",
-      "icon": null
+      "icon": "Fried_rice.webp"
     },
     {
       "name": "Onion Soup",
-      "icon": null
+      "icon": "Onion_soup.webp"
     },
     {
       "name": "Peaches And Cream",
@@ -1490,181 +1470,214 @@
     },
     {
       "name": "Roasted Cauliflower",
-      "icon": null
+      "icon": "Roasted_cauliflower.webp"
     },
     {
       "name": "Roasted Sweet Potato",
-      "icon": null
+      "icon": "Roasted_sweet_potato.webp"
     },
     {
       "name": "Sauteed Snow Peas",
-      "icon": null
+      "icon": "Sauteed_snow_peas.webp"
     },
     {
       "name": "Braised Carrots",
-      "icon": null
+      "icon": "Braised_carrots.webp"
     },
     {
       "name": "Salted Watermelon",
-      "icon": null
+      "icon": "Salted_watermelon.webp"
     },
     {
       "name": "Simmered Daikon",
-      "icon": null
+      "icon": "Simmered_daikon.webp"
     },
     {
       "name": "Sliced Turnip",
-      "icon": null
+      "icon": "Sliced_turnip.webp"
     },
     {
       "name": "Strawberries And Cream",
-      "icon": null
+      "icon": "Strawberries_and_cream.webp"
     },
     {
       "name": "Hard Boiled Egg",
-      "icon": null
+      "icon": "Hard_boiled_egg.webp"
     },
     {
       "name": "Obsidian Blade",
-      "icon": null
+      "icon": "Obsidian_blade.webp"
     },
     {
       "name": "Rock Statue",
-      "icon": null
+      "icon": "Rock_statue.webp"
     },
     {
       "name": "Rock With A Hole",
-      "icon": null
+      "icon": "Rock_with_a_hole.webp"
     },
     {
       "name": "Weightless Stone",
-      "icon": null
+      "icon": "Weightless_stone.webp"
     },
     {
       "name": "Giant Fish Scale",
-      "icon": null
+      "icon": "Giant_fish_scale.webp"
     },
     {
       "name": "Rubber Fish",
-      "icon": null
+      "icon": "Rubber_fish.webp"
     },
     {
       "name": "Grilled Eel Rice bowl",
-      "icon": null
+      "icon": "Grilled_eel_rice_bowl.webp"
     },
     {
       "name": "Horseradish Salmon",
-      "icon": null
+      "icon": "Horseradish_salmon.png"
     },
     {
       "name": "Mackerel Sashimi",
-      "icon": null
+      "icon": "Mackerel_sashimi.webp"
     },
     {
-      "name": "Pan-fried Bream",
-      "icon": null
+      "name": "Pan Fried Bream",
+      "icon": "Pan_fried_bream.webp"
     },
     {
-      "name": "Pan-fried Salmon",
-      "icon": null
+      "name": "Pan Fried Salmon",
+      "icon": "Pan_fried_salmon.webp"
     },
     {
-      "name": "Pan-fried Snapper",
-      "icon": null
+      "name": "Pan Fried Snapper",
+      "icon": "Pan_fried_snapper.webp"
     },
     {
       "name": "Salmon Sashimi",
-      "icon": null
+      "icon": "Salmon_sashimi.webp"
     },
     {
       "name": "Smoked Trout Soup",
-      "icon": null
+      "icon": "Smoked_trout_soup.webp"
     },
     {
       "name": "Tuna Sashimi",
-      "icon": null
+      "icon": "Tuna_sashimi.webp"
     },
     {
       "name": "Crystal Berries",
-      "icon": null
+      "icon": "Crystal_berries.webp"
     },
     {
       "name": "Chicken Egg",
-      "icon": null
+      "icon": "Chicken_egg.webp"
     },
     {
-      "name": "Moonfruit",
-      "icon": null
+      "name": "Moon Fruit",
+      "icon": "Moon_fruit.webp"
     },
     {
       "name": "Golden Alpaca Wool",
-      "icon": null
+      "icon": "Golden_alpaca_wool.webp"
     },
     {
-      "name": "Golden Rabbit Hair",
-      "icon": null
+      "name": "Golden Rabbit Wool",
+      "icon": "Golden_rabbit_wool.webp"
     },
     {
       "name": "Golden Sheep Wool",
-      "icon": null
+      "icon": "Golden_sheep_wool.webp"
     },
     {
       "name": "Alpaca Wool",
-      "icon": null
+      "icon": "Alpaca_wool.webp"
     },
     {
       "name": "Breath Of Fire",
-      "icon": null
+      "icon": "Breath_of_flame.webp"
     },
     {
-      "name": "Rabbit Hair",
-      "icon": null
+      "name": "Rabbit Wool",
+      "icon": "Rabbit_wool.webp"
     },
     {
       "name": "Sheep Wool",
-      "icon": null
+      "icon": "Sheep_wool.webp"
     },
     {
       "name": "Coral",
-      "icon": null
+      "icon": "Coral.webp"
     },
     {
       "name": "Hard Wood",
-      "icon": null
+      "icon": "Hard_wood.webp"
     },
     {
       "name": "Winter Stew",
-      "icon": null
+      "icon": "Winter_stew.webp"
     },
     {
       "name": "Cranberry Juice",
-      "icon": null
+      "icon": "Cranberry_juice.webp"
     },
     {
       "name": "Orange Juice",
-      "icon": null
+      "icon": "Orange_juice.webp"
     },
     {
       "name": "Pomegranate Juice",
-      "icon": null
+      "icon": "Pomegranate_juice.webp"
     },
     {
       "name": "Steamed Broccoli",
-      "icon": null
+      "icon": "Steamed_broccoli.webp"
     },
     {
       "name": "Tide Salad",
-      "icon": null
+      "icon": "Tide_salad.webp"
     },
     {
       "name": "Turnip And Cabbage Salad",
-      "icon": null
+      "icon": "Turnip_and_cabbage_salad.webp"
+    },
+    {
+      "name": "Ancient Royal Scepter",
+      "icon": "Ancient_royal_scepter.webp"
+    },
+    {
+      "name": "Dog Treat",
+      "icon": "Dog_treat.webp"
+    },
+    {
+      "name": "Copper Nugget Beetle",
+      "icon": "Copper_nugget_beetle.webp"
+    },
+    {
+      "name": "Crab Cakes",
+      "icon": "Crab_cakes.webp"
+    },
+    {
+      "name": "Coin Lump",
+      "icon": "Coin_lump.webp"
+    },
+    {
+      "name": "Fiber",
+      "icon": "Fiber.webp"
     }
   ],
   "metadata": {
-    "totalItems": 415,
-    "itemsWithIcons": 55,
-    "itemsWithoutIcons": 360,
-    "lastUpdated": "2025-08-03T20:41:57.809Z"
+    "totalItems": 416,
+    "itemsWithIcons": 404,
+    "itemsWithoutIcons": 12,
+    "lastUpdated": "2025-08-03T22:10:48.584Z",
+    "availableIconFiles": 393,
+    "usedIcons": 393,
+    "unusedIcons": 0,
+    "iconUtilization": 100,
+    "totalGiftReferences": 900,
+    "dataNormalizationEfficiency": 54,
+    "referencedGifts": 411,
+    "itemsRemovedLastUpdate": 0,
+    "itemsAddedLastUpdate": 0
   }
 }

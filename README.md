@@ -4,7 +4,7 @@ A web application for Fields of Mistria players to manage their gaming activitie
 
 ## Features
 
-### 🎁 Gift Tracker (Module 1)
+### 🎁 Gift Planner (Module 1)
 
 - **Character Overview**: Browse all game characters with their portrait icons
 - **Loved Gifts Display**: View each character's loved gifts in an easy-to-scan format

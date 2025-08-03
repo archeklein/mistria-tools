@@ -1,9 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// NOTE: This script needs to be updated to work with the new data structure
-// where characters.json stores gift names as strings and items.json stores the icon mappings
-// For now, the data structure has been successfully refactored using refactor_data_structure.cjs
+console.log("🔄 Starting comprehensive gift and icon update...");
 
 // Read the current JSON files
 const charactersData = JSON.parse(
@@ -11,62 +9,70 @@ const charactersData = JSON.parse(
 );
 const itemsData = JSON.parse(fs.readFileSync("src/data/items.json", "utf8"));
 
-// List of available icon files (from the listing)
-const availableIcons = [
-  "Alda_gem_bracelet.webp",
-  "Apple_honey_curry.webp",
-  "Candied_lemon_peel.webp",
-  "Cauliflower_curry.webp",
-  "Chickpea_curry.webp",
-  "Chili_coconut_curry.webp",
-  "Coffee.webp",
-  "Crystal_rose.webp",
-  "Cup_of_tea.webp",
-  "Deluxe_curry.webp",
-  "Diamond.webp",
-  "Emerald.webp",
-  "Family_crest_pendant.webp",
-  "Fog_orchid.webp",
-  "Frost_lily.webp",
-  "Gazpacho.webp",
-  "Gold_Ingot.webp",
-  "Gold_Ore.webp",
-  "Golden_cheesecake.webp",
-  "Golden_cookies.webp",
-  "Heather.webp",
-  "Jasmine.webp",
-  "Lemon.webp",
-  "Lemon_cake.webp",
-  "Lemon_pie.webp",
-  "Lemonade.webp",
-  "Middlemist.webp",
-  "Paper.webp",
-  "Peach.webp",
-  "Peaches_and_cream.webp",
-  "Perfect_diamond.webp",
-  "Perfect_emerald.webp",
-  "Perfect_gold_ore.webp",
-  "Perfect_ruby.webp",
-  "Perfect_sapphire.webp",
-  "Pineshroom_toast.webp",
-  "Plum_blossom.webp",
-  "Pumpkin_pie.webp",
-  "Pumpkin_stew.webp",
-  "Red_Wine.webp",
-  "Rose.webp",
-  "Ruby.webp",
-  "Rusted_treasure_chest.webp",
-  "Sapphire.webp",
-  "Sapphire_betta.webp",
-  "Snapdragon.webp",
-  "Snowdrop_anemone.webp",
-  "Spicy_cheddar_biscuit.webp",
-  "Tulip.webp",
-  "Vegetable_soup.webp",
-  "White_wine.webp",
-  "Wild_berry_pie.webp",
-  "Wild_berry_scone.webp",
-];
+// Collect all gift names that are actually referenced by characters
+const referencedGiftNames = new Set();
+charactersData.characters.forEach((character) => {
+  character.loved_gifts.forEach((giftName) =>
+    referencedGiftNames.add(giftName)
+  );
+  character.liked_gifts.forEach((giftName) =>
+    referencedGiftNames.add(giftName)
+  );
+});
+
+console.log(
+  `📋 Found ${referencedGiftNames.size} unique gifts referenced by characters`
+);
+
+// Remove items that are not referenced by any character
+const originalItemsCount = itemsData.items.length;
+itemsData.items = itemsData.items.filter((item) =>
+  referencedGiftNames.has(item.name)
+);
+const removedItemsCount = originalItemsCount - itemsData.items.length;
+
+if (removedItemsCount > 0) {
+  console.log(
+    `🧹 Removed ${removedItemsCount} unreferenced items from items.json`
+  );
+} else {
+  console.log(`✅ All items in items.json are properly referenced`);
+}
+
+// Add any missing items that are referenced in characters.json but not in items.json
+const existingItemNames = new Set(itemsData.items.map((item) => item.name));
+const missingItems = [];
+
+referencedGiftNames.forEach((giftName) => {
+  if (!existingItemNames.has(giftName)) {
+    missingItems.push({
+      name: giftName,
+      icon: null,
+    });
+  }
+});
+
+if (missingItems.length > 0) {
+  itemsData.items.push(...missingItems);
+  console.log(`➕ Added ${missingItems.length} missing items to items.json:`);
+  missingItems.forEach((item) => {
+    console.log(`   - ${item.name}`);
+  });
+} else {
+  console.log(`✅ All referenced items are already in items.json`);
+}
+
+// Dynamically read all available icon files from the items directory
+const itemsDirectory = "src/assets/items";
+const availableIconFiles = fs
+  .readdirSync(itemsDirectory)
+  .filter((file) => file.endsWith(".webp") || file.endsWith(".png"))
+  .filter((file) => !file.includes("(")) // Filter out duplicate files with parentheses
+  .sort();
+
+console.log(
+  `📁 Found ${availableIconFiles.length} icon files in ${itemsDirectory}`
+);
 
 // Function to normalize gift names to match icon file names
 function normalizeGiftName(giftName) {
@@ -74,24 +80,23 @@ function normalizeGiftName(giftName) {
     .toLowerCase()
     .replace(/\s+/g, "_")
     .replace(/&/g, "and")
-    .replace(/[^\w_]/g, "");
+    .replace(/[^\w'_]/g, ""); // Keep apostrophes in the normalization
 }
 
-// Function to find matching icon for a gift
-function findIconForGift(giftName) {
-  const normalized = normalizeGiftName(giftName);
+// Function to find matching icon for an item
+function findIconForItem(itemName) {
+  const normalized = normalizeGiftName(itemName);
 
-  // Direct match
-  const directMatch = availableIcons.find(
-    (icon) => icon.toLowerCase().replace(".webp", "") === normalized
+  // Direct match (case insensitive)
+  const directMatch = availableIconFiles.find(
+    (icon) => icon.toLowerCase().replace(/\.(webp|png)$/, "") === normalized
   );
   if (directMatch) return directMatch;
 
-  // Special cases for mismatches
+  // Special cases for mismatches between item names and icon filenames
   const specialCases = {
     tea_with_lemon: "Cup_of_tea.webp",
     snap_dragon: "Snapdragon.webp",
-    spicy_chedder_biscuit: "Spicy_cheddar_biscuit.webp",
     wild_berry_pie: "Wild_berry_pie.webp",
     wild_berry_scone: "Wild_berry_scone.webp",
     red_wine: "Red_Wine.webp",
@@ -99,6 +104,13 @@ function findIconForGift(giftName) {
     peaches_and_cream: "Peaches_and_cream.webp",
     gold_ingot: "Gold_Ingot.webp",
     gold_ore: "Gold_Ore.webp",
+    breath_of_fire: "Breath_of_flame.webp",
+    chysanthemum: "Chrysanthemum.webp",
+    spring_salad: "Spring_salad.png",
+    lemon_pie: "Lemon_pie.webp",
+    gazpacho: "Gazpacho.webp",
+    cup_of_tea: "Cup_of_tea.webp",
+    coffee: "Coffee.webp",
   };
 
   if (specialCases[normalized]) {
@@ -108,59 +120,81 @@ function findIconForGift(giftName) {
   return null;
 }
 
-// Update existing gift objects to add missing icons
-function updateGiftIcons(giftArray) {
-  return giftArray.map((gift) => {
-    // If icon is null or missing, try to find one
-    if (!gift.icon) {
-      gift.icon = findIconForGift(gift.name);
-    }
-    return gift;
-  });
-}
-
-// Update each character's gifts
-jsonData.characters.forEach((character) => {
-  character.loved_gifts = updateGiftIcons(character.loved_gifts);
-  character.liked_gifts = updateGiftIcons(character.liked_gifts);
+// Update items in the items array
+let updatedCount = 0;
+itemsData.items.forEach((item) => {
+  const foundIcon = findIconForItem(item.name);
+  if (foundIcon && item.icon !== foundIcon) {
+    item.icon = foundIcon;
+    updatedCount++;
+  } else if (!item.icon && foundIcon) {
+    item.icon = foundIcon;
+    updatedCount++;
+  }
 });
 
-// Write the updated JSON file
-fs.writeFileSync("characters_gifts.json", JSON.stringify(jsonData, null, 2));
+// Write the updated files
+fs.writeFileSync("src/data/items.json", JSON.stringify(itemsData, null, 2));
 
-console.log("Successfully updated characters_gifts.json with missing icons");
+console.log(`✅ Successfully updated data structure!`);
+console.log(`🔄 Updated ${updatedCount} items with icons`);
 
-// Log some statistics
-let totalGifts = 0;
-let giftsWithIcons = 0;
+// Statistics
+let totalItems = itemsData.items.length;
+let itemsWithIcons = itemsData.items.filter((item) => item.icon).length;
+let itemsWithoutIcons = totalItems - itemsWithIcons;
+
+console.log(`\n📊 COMPREHENSIVE STATISTICS:`);
+console.log(`Characters: ${charactersData.characters.length}`);
+console.log(`Referenced gifts: ${referencedGiftNames.size}`);
+console.log(`Items removed: ${removedItemsCount}`);
+console.log(`Items added: ${missingItems.length}`);
+console.log(`Total unique items: ${totalItems}`);
+console.log(
+  `Items with icons: ${itemsWithIcons} (${Math.round(
+    (itemsWithIcons / totalItems) * 100
+  )}%)`
+);
+console.log(
+  `Items without icons: ${itemsWithoutIcons} (${Math.round(
+    (itemsWithoutIcons / totalItems) * 100
+  )}%)`
+);
+
+// Calculate total gift references across all characters
+let totalGiftReferences = 0;
+charactersData.characters.forEach((character) => {
+  totalGiftReferences +=
+    character.loved_gifts.length + character.liked_gifts.length;
+});
+
+console.log(`Total gift references: ${totalGiftReferences}`);
+console.log(
+  `Data normalization efficiency: ${Math.round(
+    (1 - totalItems / totalGiftReferences) * 100
+  )}% space saved`
+);
+
+// Find used and unused icons
 const usedIcons = new Set();
-
-jsonData.characters.forEach((character) => {
-  character.loved_gifts.forEach((gift) => {
-    totalGifts++;
-    if (gift.icon) {
-      giftsWithIcons++;
-      usedIcons.add(gift.icon);
-    }
-  });
-  character.liked_gifts.forEach((gift) => {
-    totalGifts++;
-    if (gift.icon) {
-      giftsWithIcons++;
-      usedIcons.add(gift.icon);
-    }
-  });
+itemsData.items.forEach((item) => {
+  if (item.icon) {
+    usedIcons.add(item.icon);
+  }
 });
 
-console.log(`\n📊 STATISTICS:`);
-console.log(`Total gifts: ${totalGifts}`);
-console.log(`Gifts with icons: ${giftsWithIcons}`);
-console.log(`Gifts without icons: ${totalGifts - giftsWithIcons}`);
-console.log(`Total available icons: ${availableIcons.length}`);
-console.log(`Icons used: ${usedIcons.size}`);
+const unusedIcons = availableIconFiles.filter((icon) => !usedIcons.has(icon));
 
-// Find unused icons
-const unusedIcons = availableIcons.filter((icon) => !usedIcons.has(icon));
+console.log(`\n🎨 ICON ANALYSIS:`);
+console.log(`Available icons: ${availableIconFiles.length}`);
+console.log(`Used icons: ${usedIcons.size}`);
+console.log(`Unused icons: ${unusedIcons.length}`);
+console.log(
+  `Icon utilization: ${Math.round(
+    (usedIcons.size / availableIconFiles.length) * 100
+  )}%`
+);
+
 if (unusedIcons.length > 0) {
   console.log("\n⚠️  UNUSED ICONS:");
   unusedIcons.forEach((icon) => {
@@ -170,28 +204,46 @@ if (unusedIcons.length > 0) {
     `\n💡 Consider removing these ${unusedIcons.length} unused icon files or finding corresponding items.`
   );
 } else {
-  console.log("\n✅ All icons have corresponding items!");
+  console.log("\n✅ Perfect! All icons have corresponding items!");
 }
 
-// Show items without icons
-const itemsWithoutIcons = [];
-jsonData.characters.forEach((character) => {
-  character.loved_gifts.forEach((gift) => {
-    if (!gift.icon) {
-      itemsWithoutIcons.push(gift.name);
-    }
+// Show sample of items without icons
+const itemsWithoutIconsList = itemsData.items.filter((item) => !item.icon);
+if (itemsWithoutIconsList.length > 0) {
+  console.log("\n❌ ITEMS STILL NEEDING ICONS (first 25):");
+  itemsWithoutIconsList.slice(0, 25).forEach((item) => {
+    console.log(`  - ${item.name}`);
   });
-  character.liked_gifts.forEach((gift) => {
-    if (!gift.icon) {
-      itemsWithoutIcons.push(gift.name);
-    }
-  });
-});
-
-const uniqueItemsWithoutIcons = [...new Set(itemsWithoutIcons)];
-if (uniqueItemsWithoutIcons.length > 0) {
-  console.log("\n❌ ITEMS WITHOUT ICONS:");
-  uniqueItemsWithoutIcons.forEach((item) => {
-    console.log(`  - ${item}`);
-  });
+  if (itemsWithoutIconsList.length > 25) {
+    console.log(`  ... and ${itemsWithoutIconsList.length - 25} more`);
+  }
 }
+
+// Update metadata with comprehensive info
+itemsData.metadata = {
+  ...itemsData.metadata,
+  totalItems: totalItems,
+  itemsWithIcons: itemsWithIcons,
+  itemsWithoutIcons: itemsWithoutIcons,
+  lastUpdated: new Date().toISOString(),
+  availableIconFiles: availableIconFiles.length,
+  usedIcons: usedIcons.size,
+  unusedIcons: unusedIcons.length,
+  iconUtilization: Math.round(
+    (usedIcons.size / availableIconFiles.length) * 100
+  ),
+  totalGiftReferences: totalGiftReferences,
+  dataNormalizationEfficiency: Math.round(
+    (1 - totalItems / totalGiftReferences) * 100
+  ),
+  referencedGifts: referencedGiftNames.size,
+  itemsRemovedLastUpdate: removedItemsCount,
+  itemsAddedLastUpdate: missingItems.length,
+};
+
+// Write the final updated files with comprehensive metadata
+fs.writeFileSync("src/data/items.json", JSON.stringify(itemsData, null, 2));
+
+console.log("\n🎉 Comprehensive update completed successfully!");
+console.log("📁 Files updated:");
+console.log("  - src/data/items.json (with enhanced metadata)");

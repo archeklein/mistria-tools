@@ -65,7 +65,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
         <div className="text-lg flex-shrink-0 mt-1">❤️</div>
         <div className="flex-1">
           <SegmentedControl
-            items={lovedGiftItems}
+            items={lovedGiftItems.sort((a, b) => a.name.localeCompare(b.name))}
             selectedItem={selectedGift}
             onItemSelect={handleGiftSelect}
             characterName={character.name}
@@ -79,7 +79,9 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
           <div className="text-lg flex-shrink-0 mt-1">🎵</div>
           <div className="flex-1">
             <SegmentedControl
-              items={likedGiftItems}
+              items={likedGiftItems.sort((a, b) =>
+                a.name.localeCompare(b.name)
+              )}
               selectedItem={selectedGift}
               onItemSelect={handleGiftSelect}
               characterName={character.name}
