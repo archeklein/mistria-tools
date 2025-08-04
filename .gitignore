@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .cursor/*
+
+# Build and utility scripts
+*.cjs
