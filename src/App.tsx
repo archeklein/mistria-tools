@@ -41,7 +41,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
           <div className="flex items-center justify-between h-12">
             <div className="flex items-center">
@@ -97,7 +97,7 @@ const App: React.FC = () => {
       <footer className="bg-white border-t border-gray-200 mt-8">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-2">
           <p className="text-center text-xs text-gray-500">
-            Fields of Mistria Tools - Enhance your farming adventure
+            Fields of Mistria Tools
           </p>
         </div>
       </footer>

@@ -18,7 +18,7 @@
     },
     {
       "name": "Mistril Ingot",
-      "icon": null
+      "icon": "Mistril_Ingot.webp"
     },
     {
       "name": "Peaches & Cream",
@@ -26,7 +26,7 @@
     },
     {
       "name": "Perfect Pink Diamond",
-      "icon": null
+      "icon": "Perfect_pink_diamond.webp"
     },
     {
       "name": "Plum Blossom",
@@ -66,7 +66,7 @@
     },
     {
       "name": "Mistril Ore",
-      "icon": null
+      "icon": "Mistril_Ore.webp"
     },
     {
       "name": "Paper",
@@ -82,7 +82,7 @@
     },
     {
       "name": "Pink Diamond",
-      "icon": null
+      "icon": "Pink_diamond.webp"
     },
     {
       "name": "Pumpkin Stew",
@@ -234,7 +234,7 @@
     },
     {
       "name": "Essence Blossom",
-      "icon": null
+      "icon": "Essence_blossom.webp"
     },
     {
       "name": "Hydrangea",
@@ -330,7 +330,7 @@
     },
     {
       "name": "Spell Fruit Parfait",
-      "icon": null
+      "icon": "Spell_fruit_parfait.webp"
     },
     {
       "name": "Strawberry Shortcake",
@@ -410,7 +410,7 @@
     },
     {
       "name": "Hardened Essence",
-      "icon": null
+      "icon": "Hardened_essence.webp"
     },
     {
       "name": "Moon Fruit Cake",
@@ -470,7 +470,7 @@
     },
     {
       "name": "Spell Fruit",
-      "icon": null
+      "icon": "Spell_fruit.webp"
     },
     {
       "name": "Toasted Sunflower Seeds",
@@ -637,10 +637,6 @@
       "icon": "Upper_mines_mushroom.webp"
     },
     {
-      "name": "Dragon-Forged Bracelet",
-      "icon": null
-    },
-    {
       "name": "Meteorite",
       "icon": "Meteorite.webp"
     },
@@ -654,7 +650,7 @@
     },
     {
       "name": "Perfect Mistril Ore",
-      "icon": null
+      "icon": "Perfect_mistril_ore.webp"
     },
     {
       "name": "Perfect Silver Ore",
@@ -814,7 +810,7 @@
     },
     {
       "name": "Dragon Scale",
-      "icon": null
+      "icon": "Dragon_scale.webp"
     },
     {
       "name": "Harvest Plate",
@@ -998,7 +994,7 @@
     },
     {
       "name": "Monster Hoop",
-      "icon": null
+      "icon": "Monster_hoop.webp"
     },
     {
       "name": "Pumpkin",
@@ -1663,18 +1659,22 @@
     {
       "name": "Fiber",
       "icon": "Fiber.webp"
+    },
+    {
+      "name": "Dragon Forged Bracelet",
+      "icon": "Dragon_forged_bracelet.webp"
     }
   ],
   "metadata": {
     "totalItems": 416,
-    "itemsWithIcons": 404,
-    "itemsWithoutIcons": 12,
-    "lastUpdated": "2025-08-03T22:10:48.584Z",
-    "availableIconFiles": 393,
-    "usedIcons": 393,
+    "itemsWithIcons": 416,
+    "itemsWithoutIcons": 0,
+    "lastUpdated": "2025-08-04T14:47:23.678Z",
+    "availableIconFiles": 405,
+    "usedIcons": 405,
     "unusedIcons": 0,
     "iconUtilization": 100,
-    "totalGiftReferences": 900,
+    "totalGiftReferences": 899,
     "dataNormalizationEfficiency": 54,
     "referencedGifts": 411,
     "itemsRemovedLastUpdate": 0,

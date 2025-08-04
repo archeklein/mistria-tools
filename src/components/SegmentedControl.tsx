@@ -1,11 +1,13 @@
 import React from "react";
 import type { Item } from "../stores/giftStore";
+import ItemButton from "./ItemButton";
 
 interface SegmentedControlProps {
   items: Item[];
   selectedItem: Item | null;
   onItemSelect: (item: Item) => void;
   characterName: string;
+  selectedGiftsByOthers?: string[];
 }
 
 const SegmentedControl: React.FC<SegmentedControlProps> = ({
@@ -13,6 +15,7 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
   selectedItem,
   onItemSelect,
   characterName,
+  selectedGiftsByOthers = [],
 }) => {
   const handleItemClick = (item: Item) => {
     // Don't allow selection of items without icons (unreleased items)
@@ -20,64 +23,50 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
     onItemSelect(item);
   };
 
+  const totalItems = items.length;
+  const columns = 5;
+
   return (
-    <div className="flex flex-wrap gap-1 mt-2">
-      {items.map((item) => {
+    <div className="grid grid-cols-5 mt-2">
+      {items.map((item, index) => {
         const isSelected = selectedItem?.name === item.name;
         const isUnreleased = !item.icon;
 
+        // Calculate position for rounded corners
+        const row = Math.floor(index / columns);
+        const col = index % columns;
+        const totalRows = Math.ceil(totalItems / columns);
+        const isFirstRow = row === 0;
+        const isLastRow = row === totalRows - 1;
+        const isFirstCol = col === 0;
+        const isLastCol = col === columns - 1;
+
         return (
-          <button
+          <ItemButton
             key={item.name}
+            icon={item.icon ? `/src/assets/items/${item.icon}` : undefined}
+            label={item.name}
+            isSelected={isSelected}
+            isDisabled={isUnreleased}
+            isSelectedByOthers={selectedGiftsByOthers.includes(item.name)}
             onClick={() => handleItemClick(item)}
-            disabled={isUnreleased}
-            className={`px-1 py-1 text-xs rounded-lg border transition-all duration-200 flex items-center gap-1 ${
-              isUnreleased
-                ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60"
-                : isSelected
-                ? "bg-pink-500 text-white border-pink-500 shadow-md"
-                : "bg-white text-gray-700 border-gray-300 hover:border-pink-300 hover:bg-pink-50"
-            }`}
-            tabIndex={isUnreleased ? -1 : 0}
-            aria-label={`${isUnreleased ? "Unreleased item: " : "Select "}${
-              item.name
-            } for ${characterName}`}
-            title={isUnreleased ? `${item.name} (Unreleased)` : item.name}
             onKeyDown={(e) => {
               if (!isUnreleased && (e.key === "Enter" || e.key === " ")) {
                 e.preventDefault();
                 onItemSelect(item);
               }
             }}
-          >
-            {item.icon ? (
-              <img
-                src={`/src/assets/items/${item.icon}`}
-                alt={item.name}
-                className="w-6 h-6 object-contain"
-                onError={(e) => {
-                  // Fallback to question mark if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) {
-                    fallback.classList.remove("hidden");
-                  }
-                }}
-              />
-            ) : (
-              // Question mark icon for unreleased items
-              <div className="w-6 h-6 flex items-center justify-center text-gray-400 font-bold text-lg">
-                ?
-              </div>
-            )}
-            {/* Hidden fallback for image load errors */}
-            {item.icon && (
-              <div className="hidden w-6 h-6 flex items-center justify-center text-gray-400 font-bold text-lg">
-                ?
-              </div>
-            )}
-          </button>
+            ariaLabel={`${isUnreleased ? "Unreleased item: " : "Select "}${
+              item.name
+            } for ${characterName}`}
+            title={isUnreleased ? `${item.name} (Unreleased)` : item.name}
+            isFirstRow={isFirstRow}
+            isLastRow={isLastRow}
+            isFirstCol={isFirstCol}
+            isLastCol={isLastCol}
+            width="w-full"
+            height="h-10"
+          />
         );
       })}
     </div>
