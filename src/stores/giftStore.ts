@@ -50,7 +50,7 @@ export const useGiftStore = create<GiftStore>()(
       giftSelections: [],
       // Filter state defaults
       selectedCategory: "All",
-      showLikedGifts: true,
+      showLikedGifts: false,
       sortBy: "alphabetical",
 
       getItem: (itemName: string) => {

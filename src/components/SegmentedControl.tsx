@@ -1,6 +1,7 @@
 import React from "react";
 import type { Item } from "../stores/giftStore";
 import ItemButton from "./ItemButton";
+import { getItemIcon } from "../utils/icons";
 
 interface SegmentedControlProps {
   items: Item[];
@@ -44,7 +45,7 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
         return (
           <ItemButton
             key={item.name}
-            icon={item.icon ? `/src/assets/items/${item.icon}` : undefined}
+            icon={item.icon ? getItemIcon(item.icon) : undefined}
             label={item.name}
             isSelected={isSelected}
             isDisabled={isUnreleased}

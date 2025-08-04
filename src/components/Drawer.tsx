@@ -37,7 +37,7 @@ const Drawer: React.FC<DrawerProps> = ({
   if (!isOpen && !isAnimating) return null;
 
   return (
-    <div className="fixed inset-0 z-50 md:hidden">
+    <div className="fixed inset-0 z-50 lg:hidden">
       {/* Backdrop with opacity */}
       <div
         className={`fixed inset-0 bg-black transition-opacity duration-300 ${

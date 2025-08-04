@@ -1,5 +1,6 @@
 import React from "react";
 import { useGiftStore } from "../stores/giftStore";
+import { getCharacterIcon, getItemIcon } from "../utils/icons";
 
 interface InventoryProps {
   showHeader?: boolean;
@@ -15,12 +16,6 @@ const Inventory: React.FC<InventoryProps> = ({
   // Helper function to get character data
   const getCharacter = (characterName: string) => {
     return characters.find((char) => char.name === characterName);
-  };
-
-  // Helper function to get character icon URL
-  const getCharacterIcon = (iconFilename: string) => {
-    return new URL(`../assets/characters/${iconFilename}`, import.meta.url)
-      .href;
   };
 
   if (giftSelections.length === 0) {
@@ -99,7 +94,7 @@ const Inventory: React.FC<InventoryProps> = ({
               <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
                 {data.item.icon ? (
                   <img
-                    src={`/src/assets/items/${data.item.icon}`}
+                    src={getItemIcon(data.item.icon)}
                     alt={giftName}
                     className="w-full h-full object-contain"
                   />

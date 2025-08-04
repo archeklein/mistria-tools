@@ -2,6 +2,7 @@ import React from "react";
 import { useGiftStore, type Character, type Item } from "../stores/giftStore";
 import SegmentedControl from "./SegmentedControl";
 import ItemButton from "./ItemButton";
+import { getCharacterIcon, getItemIcon } from "../utils/icons";
 
 interface CharacterCardProps {
   character: Character;
@@ -47,12 +48,6 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
     selectGift(character.name, gift);
   };
 
-  // Get character icon URL from the data
-  const getCharacterIcon = (iconFilename: string) => {
-    return new URL(`../assets/characters/${iconFilename}`, import.meta.url)
-      .href;
-  };
-
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4 hover:shadow-xl transition-shadow duration-300">
       <div className="flex items-center justify-between gap-3 mb-3">
@@ -86,7 +81,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
         {/* Love and Like buttons in header */}
         <div className="flex gap-1">
           <ItemButton
-            icon="/src/assets/items/Infusion_icon_cook_lovable.webp"
+            icon={getItemIcon("Infusion_icon_cook_lovable.webp")}
             label={universalLovedDish.name}
             isSelected={selectedGift?.name === universalLovedDish.name}
             onClick={() => handleGiftSelect(universalLovedDish)}
@@ -105,7 +100,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
           />
           {showLikedGifts && (
             <ItemButton
-              icon="/src/assets/items/Infusion_icon_cook_likeable.webp"
+              icon={getItemIcon("Infusion_icon_cook_likeable.webp")}
               label={universalLikedDish.name}
               isSelected={selectedGift?.name === universalLikedDish.name}
               onClick={() => handleGiftSelect(universalLikedDish)}

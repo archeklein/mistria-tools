@@ -53,7 +53,7 @@ const GiftTracker: React.FC = () => {
           </div>
 
           {/* Mobile buttons - only show on md and smaller screens */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setShowFiltersDrawer(true)}
               className="w-8 h-8 rounded-lg bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors"
@@ -85,7 +85,7 @@ const GiftTracker: React.FC = () => {
       </div>
 
       {/* Filters - hide on md and smaller screens */}
-      <div className="hidden md:block bg-white rounded-lg shadow-sm border border-gray-200 p-3">
+      <div className="hidden lg:block bg-white rounded-lg shadow-sm border border-gray-200 p-3">
         <div className="flex flex-col sm:flex-row gap-3 items-end">
           {/* Category Filter */}
           <div className="flex-1">
@@ -135,18 +135,18 @@ const GiftTracker: React.FC = () => {
             <Toggle
               checked={showLikedGifts}
               onChange={setShowLikedGifts}
-              label="🎵 Show Liked"
+              label="Show Liked"
             />
           </div>
         </div>
       </div>
 
       {/* Main Content - 2 Column Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
         {/* Left Column - Character List */}
-        <div className="md:col-span-1 xl:col-span-2 space-y-3">
+        <div className="md:col-span-1 lg:col-span-2 space-y-3">
           {/* Character Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
             {filteredAndSortedCharacters.map((character) => (
               <CharacterCard
                 key={character.name}
@@ -167,7 +167,7 @@ const GiftTracker: React.FC = () => {
         </div>
 
         {/* Right Column - Inventory - hide on md and smaller screens */}
-        <div className="hidden xl:block xl:col-span-1">
+        <div className="hidden lg:block lg:col-span-1">
           <div className="sticky top-16">
             <Inventory />
           </div>
@@ -234,7 +234,7 @@ const GiftTracker: React.FC = () => {
             <Toggle
               checked={showLikedGifts}
               onChange={setShowLikedGifts}
-              label="🎵 Show Liked"
+              label="Show Liked"
             />
           </div>
         </div>
