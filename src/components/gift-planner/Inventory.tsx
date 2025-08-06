@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGiftStore } from "../../stores/giftStore";
 import Avatar from "../common/Avatar";
 import { getItemIcon } from "../../utils/icons";
@@ -14,11 +14,66 @@ const Inventory: React.FC<InventoryProps> = ({
   showContainer = true,
   showClearButton = true,
 }) => {
-  const { giftSelections, characters, clearAllGiftSelections } = useGiftStore();
+  const {
+    giftSelections,
+    characters,
+    clearAllGiftSelections,
+    selectGift,
+    trackGift,
+    getItem,
+  } = useGiftStore();
+
+  // State for confirmation tooltip
+  const [confirmationState, setConfirmationState] = useState<{
+    show: boolean;
+    characterName: string;
+    giftName: string;
+    position: { x: number; y: number };
+  } | null>(null);
 
   // Helper function to get character data
   const getCharacter = (characterName: string) => {
     return characters.find((char) => char.name === characterName);
+  };
+
+  // Handle avatar click to show confirmation
+  const handleAvatarClick = (
+    event: React.MouseEvent,
+    characterName: string,
+    giftName: string
+  ) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setConfirmationState({
+      show: true,
+      characterName,
+      giftName,
+      position: {
+        x: rect.left + rect.width / 2,
+        y: rect.top - 10,
+      },
+    });
+  };
+
+  // Handle gift confirmation
+  const handleConfirmGift = () => {
+    if (!confirmationState) return;
+
+    const { characterName, giftName } = confirmationState;
+    const item = getItem(giftName);
+
+    if (item) {
+      // Deselect the gift (this will remove it from inventory)
+      selectGift(characterName, item);
+      // Track the gift as given
+      trackGift(characterName, giftName);
+    }
+
+    setConfirmationState(null);
+  };
+
+  // Handle canceling the confirmation
+  const handleCancelGift = () => {
+    setConfirmationState(null);
   };
 
   if (giftSelections.length === 0) {
@@ -134,11 +189,19 @@ const Inventory: React.FC<InventoryProps> = ({
               {data.characters.map((characterName) => {
                 const character = getCharacter(characterName);
                 return (
-                  <Avatar
+                  <div
                     key={characterName}
-                    character={character || characterName}
-                    className="w-6 h-6 rounded-full flex-shrink-0"
-                  />
+                    onClick={(e) =>
+                      handleAvatarClick(e, characterName, giftName)
+                    }
+                    className="cursor-pointer hover:scale-110 transition-transform duration-200"
+                    title={`Click to give ${giftName} to ${characterName}`}
+                  >
+                    <Avatar
+                      character={character || characterName}
+                      className="w-6 h-6 rounded-full flex-shrink-0 ring-2 ring-transparent hover:ring-pink-400"
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -148,12 +211,59 @@ const Inventory: React.FC<InventoryProps> = ({
     </>
   );
 
-  return showContainer ? (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4 mb-4">
-      {inventoryContent}
-    </div>
-  ) : (
-    <div>{inventoryContent}</div>
+  return (
+    <>
+      {showContainer ? (
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4 mb-4">
+          {inventoryContent}
+        </div>
+      ) : (
+        <div>{inventoryContent}</div>
+      )}
+
+      {/* Confirmation Tooltip */}
+      {confirmationState && (
+        <>
+          {/* Backdrop */}
+          <div className="fixed inset-0 z-40" onClick={handleCancelGift} />
+
+          {/* Tooltip */}
+          <div
+            className="fixed z-50 bg-white border border-gray-300 rounded-lg shadow-lg p-3 min-w-48"
+            style={{
+              left: `${confirmationState.position.x}px`,
+              top: `${confirmationState.position.y}px`,
+              transform: "translate(-50%, -100%)",
+            }}
+          >
+            <div className="text-sm font-medium text-gray-800 mb-2 text-center">
+              Give {confirmationState.giftName} to{" "}
+              {confirmationState.characterName}?
+            </div>
+            <div className="flex gap-2 justify-center">
+              <button
+                onClick={handleConfirmGift}
+                className="px-3 py-1 text-xs font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
+              >
+                Yes
+              </button>
+              <button
+                onClick={handleCancelGift}
+                className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+              >
+                No
+              </button>
+            </div>
+
+            {/* Arrow pointing down */}
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2">
+              <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-300"></div>
+              <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-px"></div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
