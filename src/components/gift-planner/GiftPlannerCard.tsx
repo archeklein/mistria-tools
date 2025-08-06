@@ -88,15 +88,6 @@ const GiftPlannerCard: React.FC<GiftPlannerCardProps> = ({
     }
   };
 
-  const handleDoubleClick = (gift: Item) => {
-    // Double-tap (mobile) to track/untrack gifts
-    if (isGiftTracked(character.name, gift.name)) {
-      untrackGift(character.name, gift.name);
-    } else {
-      trackGift(character.name, gift.name);
-    }
-  };
-
   // Get matching gifts based on new search logic
   const matchingGifts = getMatchingGifts(character);
 
@@ -199,7 +190,6 @@ const GiftPlannerCard: React.FC<GiftPlannerCardProps> = ({
       likedGifts={likedGiftsProps.length > 0 ? likedGiftsProps : undefined}
       onClick={handleGiftSelect}
       onRightClick={handleRightClick}
-      onDoubleClick={handleDoubleClick}
     />
   );
 };
