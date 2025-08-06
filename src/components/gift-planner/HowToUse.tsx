@@ -88,7 +88,7 @@ const HowToUse: React.FC<HowToUseProps> = ({ isOpen, onClose }) => {
                         Right-click
                       </td>
                       <td className="border border-gray-300 px-2 py-2 text-center">
-                        Double-tap
+                        Long tap or double-tap
                       </td>
                     </tr>
                     <tr>
