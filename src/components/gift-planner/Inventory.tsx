@@ -1,15 +1,18 @@
 import React from "react";
-import { useGiftStore } from "../stores/giftStore";
-import { getCharacterIcon, getItemIcon } from "../utils/icons";
+import { useGiftStore } from "../../stores/giftStore";
+import Avatar from "../common/Avatar";
+import { getItemIcon } from "../../utils/icons";
 
 interface InventoryProps {
   showHeader?: boolean;
   showContainer?: boolean;
+  showClearButton?: boolean;
 }
 
 const Inventory: React.FC<InventoryProps> = ({
   showHeader = true,
   showContainer = true,
+  showClearButton = true,
 }) => {
   const { giftSelections, characters, clearAllGiftSelections } = useGiftStore();
 
@@ -43,16 +46,21 @@ const Inventory: React.FC<InventoryProps> = ({
 
   // Group gifts by item name and collect characters for each gift
   const giftSummary = giftSelections.reduce((acc, selection) => {
-    const giftName = selection.gift.name;
-    if (!acc[giftName]) {
-      acc[giftName] = {
-        count: 0,
-        characters: [],
-        item: selection.gift,
-      };
-    }
-    acc[giftName].count += 1;
-    acc[giftName].characters.push(selection.characterName);
+    // Handle both old and new data formats
+    const gifts = selection.gifts || [(selection as any).gift].filter(Boolean);
+
+    gifts.forEach((gift) => {
+      const giftName = gift.name;
+      if (!acc[giftName]) {
+        acc[giftName] = {
+          count: 0,
+          characters: [],
+          item: gift,
+        };
+      }
+      acc[giftName].count += 1;
+      acc[giftName].characters.push(selection.characterName);
+    });
     return acc;
   }, {} as Record<string, { count: number; characters: string[]; item: any }>);
 
@@ -67,6 +75,18 @@ const Inventory: React.FC<InventoryProps> = ({
           <h3 className="text-lg font-bold text-gray-800 flex items-center">
             🎒 Inventory
           </h3>
+          <button
+            onClick={clearAllGiftSelections}
+            className="px-3 py-1 text-xs font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg border border-red-200 hover:border-red-300 transition-colors"
+            title="Clear all gift selections"
+          >
+            Clear All
+          </button>
+        </div>
+      )}
+
+      {!showHeader && showClearButton && (
+        <div className="flex justify-end mb-3">
           <button
             onClick={clearAllGiftSelections}
             className="px-3 py-1 text-xs font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg border border-red-200 hover:border-red-300 transition-colors"
@@ -114,26 +134,11 @@ const Inventory: React.FC<InventoryProps> = ({
               {data.characters.map((characterName) => {
                 const character = getCharacter(characterName);
                 return (
-                  <div
+                  <Avatar
                     key={characterName}
-                    className="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
-                  >
-                    {character?.icon ? (
-                      <img
-                        src={getCharacterIcon(character.icon)}
-                        alt={`${characterName} icon`}
-                        className="w-full h-full object-cover"
-                        title={characterName}
-                      />
-                    ) : (
-                      <div
-                        className="text-sm font-bold text-emerald-600"
-                        title={characterName}
-                      >
-                        {characterName.charAt(0)}
-                      </div>
-                    )}
-                  </div>
+                    character={character || characterName}
+                    className="w-6 h-6 rounded-full flex-shrink-0"
+                  />
                 );
               })}
             </div>
