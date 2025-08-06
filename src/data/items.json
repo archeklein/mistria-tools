@@ -1663,20 +1663,24 @@
     {
       "name": "Dragon Forged Bracelet",
       "icon": "Dragon_forged_bracelet.webp"
+    },
+    {
+      "name": "Temple Flower",
+      "icon": "Temple_flower.webp"
     }
   ],
   "metadata": {
-    "totalItems": 416,
-    "itemsWithIcons": 416,
+    "totalItems": 417,
+    "itemsWithIcons": 417,
     "itemsWithoutIcons": 0,
-    "lastUpdated": "2025-08-04T14:47:23.678Z",
-    "availableIconFiles": 405,
-    "usedIcons": 405,
-    "unusedIcons": 0,
+    "lastUpdated": "2025-08-05T17:37:47.054Z",
+    "availableIconFiles": 408,
+    "usedIcons": 406,
+    "unusedIcons": 2,
     "iconUtilization": 100,
     "totalGiftReferences": 899,
     "dataNormalizationEfficiency": 54,
-    "referencedGifts": 411,
+    "referencedGifts": 412,
     "itemsRemovedLastUpdate": 0,
     "itemsAddedLastUpdate": 0
   }

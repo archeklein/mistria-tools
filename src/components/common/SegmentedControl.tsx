@@ -1,46 +1,56 @@
 import React from "react";
-import type { Item } from "../stores/giftStore";
+import type { Item } from "../../stores/giftStore";
 import ItemButton from "./ItemButton";
-import { getItemIcon } from "../utils/icons";
+import { getItemIcon } from "../../utils/icons";
 
 interface SegmentedControlProps {
   items: Item[];
-  selectedItem: Item | null;
-  onItemSelect: (item: Item) => void;
+  selectedItems: Item[];
+  onClick: (item: Item) => void;
+  onDoubleClick?: (item: Item) => void;
+  onRightClick?: (item: Item) => void;
   characterName: string;
   selectedGiftsByOthers?: string[];
+  mutedItems?: string[];
+  className?: string;
 }
 
 const SegmentedControl: React.FC<SegmentedControlProps> = ({
   items,
-  selectedItem,
-  onItemSelect,
+  selectedItems,
+  onClick,
+  onDoubleClick,
+  onRightClick,
   characterName,
   selectedGiftsByOthers = [],
+  mutedItems = [],
+  className,
 }) => {
   const handleItemClick = (item: Item) => {
     // Don't allow selection of items without icons (unreleased items)
     if (!item.icon) return;
-    onItemSelect(item);
+    onClick(item);
   };
 
-  const totalItems = items.length;
-  const columns = 5;
+  const handleItemDoubleClick = (item: Item) => {
+    // Don't allow double click on items without icons (unreleased items)
+    if (!item.icon || !onDoubleClick) return;
+    onDoubleClick(item);
+  };
+
+  const handleItemRightClick = (item: Item) => {
+    // Don't allow right click on items without icons (unreleased items)
+    if (!item.icon || !onRightClick) return;
+    onRightClick(item);
+  };
 
   return (
-    <div className="grid grid-cols-5 mt-2">
-      {items.map((item, index) => {
-        const isSelected = selectedItem?.name === item.name;
+    <div className={`grid grid-cols-5 mt-2 ${className}`}>
+      {items.map((item) => {
+        const isSelected = selectedItems.some(
+          (selectedItem) => selectedItem.name === item.name
+        );
         const isUnreleased = !item.icon;
-
-        // Calculate position for rounded corners
-        const row = Math.floor(index / columns);
-        const col = index % columns;
-        const totalRows = Math.ceil(totalItems / columns);
-        const isFirstRow = row === 0;
-        const isLastRow = row === totalRows - 1;
-        const isFirstCol = col === 0;
-        const isLastCol = col === columns - 1;
 
         return (
           <ItemButton
@@ -50,21 +60,20 @@ const SegmentedControl: React.FC<SegmentedControlProps> = ({
             isSelected={isSelected}
             isDisabled={isUnreleased}
             isSelectedByOthers={selectedGiftsByOthers.includes(item.name)}
+            isMuted={mutedItems.includes(item.name)}
             onClick={() => handleItemClick(item)}
+            onDoubleClick={() => handleItemDoubleClick(item)}
+            onRightClick={() => handleItemRightClick(item)}
             onKeyDown={(e) => {
               if (!isUnreleased && (e.key === "Enter" || e.key === " ")) {
                 e.preventDefault();
-                onItemSelect(item);
+                onClick(item);
               }
             }}
             ariaLabel={`${isUnreleased ? "Unreleased item: " : "Select "}${
               item.name
             } for ${characterName}`}
             title={isUnreleased ? `${item.name} (Unreleased)` : item.name}
-            isFirstRow={isFirstRow}
-            isLastRow={isLastRow}
-            isFirstCol={isFirstCol}
-            isLastCol={isLastCol}
             width="w-full"
             height="h-10"
           />

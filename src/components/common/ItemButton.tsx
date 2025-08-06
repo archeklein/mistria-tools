@@ -6,15 +6,14 @@ interface ItemButtonProps {
   isSelected?: boolean;
   isDisabled?: boolean;
   isSelectedByOthers?: boolean;
+  isMuted?: boolean;
   onClick?: () => void;
+  onDoubleClick?: () => void;
+  onRightClick?: () => void;
   onKeyDown?: (e: React.KeyboardEvent) => void;
   className?: string;
   ariaLabel?: string;
   title?: string;
-  isFirstRow?: boolean;
-  isLastRow?: boolean;
-  isFirstCol?: boolean;
-  isLastCol?: boolean;
   width?: string;
   height?: string;
 }
@@ -25,15 +24,14 @@ const ItemButton: React.FC<ItemButtonProps> = ({
   isSelected = false,
   isDisabled = false,
   isSelectedByOthers = false,
+  isMuted = false,
   onClick,
+  onDoubleClick,
+  onRightClick,
   onKeyDown,
   className = "",
   ariaLabel,
   title,
-  isFirstRow = false,
-  isLastRow = false,
-  isFirstCol = false,
-  isLastCol = false,
   width = "w-10",
   height = "h-10",
 }) => {
@@ -43,53 +41,45 @@ const ItemButton: React.FC<ItemButtonProps> = ({
     }
   };
 
+  const handleDoubleClick = () => {
+    if (!isDisabled && onDoubleClick) {
+      onDoubleClick();
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isDisabled && onKeyDown) {
       onKeyDown(e);
     }
   };
 
-  // If all position props are true, this is a standalone button - give it full borders and rounded corners
-  const isStandalone = isFirstRow && isLastRow && isFirstCol && isLastCol;
+  const handleRightClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent context menu
+    if (!isDisabled && onRightClick) {
+      onRightClick();
+    }
+  };
 
-  // Build rounded corner classes based on position
-  const roundedClasses = isStandalone
-    ? "rounded-lg" // Standalone buttons get full rounded corners
-    : [
-        isFirstRow && isFirstCol ? "rounded-tl-lg" : "",
-        isFirstRow && isLastCol ? "rounded-tr-lg" : "",
-        isLastRow && isFirstCol ? "rounded-bl-lg" : "",
-        isLastRow && isLastCol ? "rounded-br-lg" : "",
-      ]
-        .filter(Boolean)
-        .join(" ");
-
-  // Build selective border classes to avoid doubling
-
-  const borderClasses = isStandalone
-    ? "border" // Standalone buttons get full border
-    : [
-        "border-t", // Grid buttons get top border
-        "border-l", // Grid buttons get left border
-        isLastCol ? "border-r" : "", // Only last column gets right border
-        isLastRow ? "border-b" : "", // Only last row gets bottom border
-      ]
-        .filter(Boolean)
-        .join(" ");
+  // Simple border without rounded corners
+  const borderClasses = "border";
 
   return (
-    <div className="relative">
+    <div className={`relative ${isMuted ? "opacity-40" : ""}`}>
       <button
         onClick={handleClick}
+        onDoubleClick={handleDoubleClick}
+        onContextMenu={handleRightClick}
         disabled={isDisabled}
-        className={`${width} ${height} text-xs ${borderClasses} transition-all duration-200 flex items-center justify-center ${roundedClasses} ${
+        className={`${width} ${height} text-xs ${borderClasses} transition-all duration-200 flex items-center justify-center ${
           isDisabled
             ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60"
-            : isSelected
+            : isSelectedByOthers
             ? "bg-pink-400 text-white border-pink-400 shadow-md"
-            : "bg-white text-gray-700 border-gray-300 hover:border-pink-300 hover:bg-pink-50"
+            : `${
+                isMuted ? "bg-gray-200" : "bg-white"
+              } text-gray-700 border-gray-300 hover:border-pink-300 hover:bg-pink-50`
         } ${
-          isSelectedByOthers ? "shadow-[inset_0_0_0_2px_#059669]" : ""
+          isSelected ? "shadow-[inset_0_0_0_2px_#059669] border-none" : ""
         } ${className}`}
         tabIndex={isDisabled ? -1 : 0}
         aria-label={ariaLabel || label}
@@ -103,7 +93,9 @@ const ItemButton: React.FC<ItemButtonProps> = ({
               <img
                 src={icon}
                 alt={label}
-                className="w-8 h-8 object-contain"
+                className={`w-8 h-8 object-contain ${
+                  isMuted ? "opacity-50" : ""
+                }`}
                 onError={(e) => {
                   // Fallback to question mark if image fails to load
                   const target = e.target as HTMLImageElement;
@@ -134,10 +126,23 @@ const ItemButton: React.FC<ItemButtonProps> = ({
         )}
       </button>
 
-      {/* Badge for items selected by other characters */}
-      {isSelectedByOthers && !isSelected && !isDisabled && (
-        <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-white rounded-full flex items-center justify-center z-10 shadow-sm">
-          <div className="w-2.5 h-2.5 bg-green-600 rounded-full"></div>
+      {/* Badge for selected items */}
+      {isSelected && !isSelectedByOthers && !isDisabled && (
+        <div className="absolute -top-1 -right-1 w-5 h-5 bg-pink-600 rounded-full flex items-center justify-center z-10 shadow-lg">
+          <svg
+            className="w-3 h-3 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={3}
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
         </div>
       )}
     </div>
