@@ -29,6 +29,7 @@ const Inventory: React.FC<InventoryProps> = ({
     characterName: string;
     giftName: string;
     position: { x: number; y: number };
+    originalX: number; // Store original avatar x position for arrow positioning
   } | null>(null);
 
   // Helper function to get character data
@@ -43,14 +44,32 @@ const Inventory: React.FC<InventoryProps> = ({
     giftName: string
   ) => {
     const rect = event.currentTarget.getBoundingClientRect();
+    const tooltipWidth = 192; // min-w-48 = 12rem = 192px
+    const windowWidth = window.innerWidth;
+    const margin = 16; // Add some margin from screen edge
+
+    // Calculate optimal x position
+    let x = rect.left + rect.width / 2;
+
+    // Check if tooltip would overflow on the right
+    if (x + tooltipWidth / 2 > windowWidth - margin) {
+      x = windowWidth - tooltipWidth / 2 - margin;
+    }
+
+    // Check if tooltip would overflow on the left
+    if (x - tooltipWidth / 2 < margin) {
+      x = tooltipWidth / 2 + margin;
+    }
+
     setConfirmationState({
       show: true,
       characterName,
       giftName,
       position: {
-        x: rect.left + rect.width / 2,
+        x,
         y: rect.top - 10,
       },
+      originalX: rect.left + rect.width / 2, // Store original avatar center position
     });
   };
 
@@ -243,20 +262,33 @@ const Inventory: React.FC<InventoryProps> = ({
             <div className="flex gap-2 justify-center">
               <button
                 onClick={handleConfirmGift}
-                className="px-3 py-1 text-xs font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
+                className="px-3 py-1 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-md transition-colors"
               >
                 Yes
               </button>
               <button
                 onClick={handleCancelGift}
-                className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+                className="px-3 py-1 text-sm font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
               >
                 No
               </button>
             </div>
 
-            {/* Arrow pointing down */}
-            <div className="absolute top-full left-1/2 transform -translate-x-1/2">
+            {/* Arrow pointing down - positioned to point at original avatar */}
+            <div
+              className="absolute top-full transform -translate-x-1/2"
+              style={{
+                left: `${Math.max(
+                  16,
+                  Math.min(
+                    176,
+                    confirmationState.originalX -
+                      confirmationState.position.x +
+                      96
+                  )
+                )}px`, // Clamp arrow position within tooltip bounds
+              }}
+            >
               <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-300"></div>
               <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-px"></div>
             </div>
