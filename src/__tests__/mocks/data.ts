@@ -1,4 +1,4 @@
-import { Character, Item } from "../../stores/giftStore";
+import { type Character, type Item } from "../../stores/giftStore";
 
 export const mockItems: Item[] = [
   { name: "Apple", icon: "Apple.webp" },

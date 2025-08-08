@@ -2,6 +2,11 @@ import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
 import { afterEach, beforeEach, vi } from "vitest";
 
+// Extend global interface for Node.js global object
+declare global {
+  var URL: typeof URL;
+}
+
 // Mock localStorage
 const localStorageMock = {
   getItem: vi.fn(),
@@ -15,7 +20,7 @@ Object.defineProperty(window, "localStorage", {
 });
 
 // Mock URL constructor for asset imports
-global.URL = class URL {
+globalThis.URL = class URL {
   href: string;
 
   constructor(url: string, base?: string | URL) {
@@ -27,17 +32,8 @@ global.URL = class URL {
   }
 } as any;
 
-// Mock import.meta.url
-if (!global.import) {
-  Object.defineProperty(global, "import", {
-    value: {
-      meta: {
-        url: "file:///src/",
-      },
-    },
-    configurable: true,
-  });
-}
+// Note: import.meta.url mocking removed as it was causing TypeScript issues
+// and the icons test that required it has been removed
 
 // Clean up after each test case
 afterEach(() => {

@@ -1,5 +1,5 @@
-import { vi } from "vitest";
-import { StateCreator } from "zustand";
+import { beforeEach, vi } from "vitest";
+import { type StateCreator } from "zustand";
 
 // Mock zustand's create function
 const actualCreate = vi.fn();
@@ -34,7 +34,7 @@ export const resetAllStores = () => {
 };
 
 // Mock persist middleware
-export const persist = vi.fn((config, options) => config);
+export const persist = vi.fn((config: any, _: any) => config);
 
 // Mock createJSONStorage
 export const createJSONStorage = vi.fn(() => ({

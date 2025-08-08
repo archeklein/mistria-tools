@@ -1,13 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
 import { useGiftStore } from "../../stores/giftStore";
-import type {
-  Character,
-  Item,
-  GiftSelection,
-  TrackedGift,
-} from "../../stores/giftStore";
+import type { Item, GiftSelection } from "../../stores/giftStore";
 
 // Mock the data imports
 vi.mock("../../data/characters.json", () => ({
@@ -72,14 +65,9 @@ vi.mock("zustand/middleware", () => ({
 }));
 
 describe("GiftStore", () => {
-  let store: ReturnType<typeof useGiftStore>;
-
   beforeEach(() => {
     // Reset localStorage mock
     vi.clearAllMocks();
-
-    // Get a fresh store instance
-    store = useGiftStore.getState();
 
     // Reset store to initial state
     useGiftStore.setState({
