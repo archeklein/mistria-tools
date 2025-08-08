@@ -27,3 +27,7 @@ dist-ssr
 
 # Build and utility scripts
 *.cjs
+
+# Excel temp files and backups
+~$*.xlsx
+backup/ 

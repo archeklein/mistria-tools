@@ -4,6 +4,7 @@ import GiftPlannerCard from "./GiftPlannerCard";
 import Inventory from "./Inventory";
 import Toggle from "../common/Toggle";
 import Drawer from "../common/Drawer";
+import MultiSelect from "../common/MultiSelect";
 
 const GiftTracker: React.FC = () => {
   const [showFiltersDrawer, setShowFiltersDrawer] = useState(false);
@@ -11,12 +12,14 @@ const GiftTracker: React.FC = () => {
 
   const {
     characters,
-    selectedCategory,
+    selectedCategories,
+    showSpoilers,
     showLikedGifts,
     showTrackedGifts,
     sortBy,
     searchQuery,
-    setSelectedCategory,
+    setSelectedCategories,
+    setShowSpoilers,
     setShowLikedGifts,
     setShowTrackedGifts,
     setSortBy,
@@ -25,11 +28,10 @@ const GiftTracker: React.FC = () => {
     giftSelections,
   } = useGiftStore();
 
-  // Get unique categories
-  const categories = [
-    "All",
-    ...Array.from(new Set(characters.map((char) => char.category))),
-  ];
+  // Get unique categories (no longer need "All" option)
+  const categories = Array.from(
+    new Set(characters.map((char) => char.category))
+  );
 
   // Get filtered and sorted characters from store
   const filteredAndSortedCharacters = getFilteredAndSortedCharacters();
@@ -148,24 +150,14 @@ const GiftTracker: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 items-end">
             {/* Category Filter */}
             <div className="flex-1">
-              <label
-                htmlFor="category"
-                className="block text-xs font-medium text-gray-700 mb-1"
-              >
-                Category
-              </label>
-              <select
+              <MultiSelect
                 id="category"
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-2 py-1 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              >
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
+                label="Category"
+                options={categories}
+                selectedOptions={selectedCategories}
+                onChange={setSelectedCategories}
+                placeholder="Select categories..."
+              />
             </div>
 
             {/* Sort Options */}
@@ -191,6 +183,11 @@ const GiftTracker: React.FC = () => {
 
             {/* Toggle Controls */}
             <div className="flex flex-row gap-2 pb-1">
+              <Toggle
+                checked={showSpoilers}
+                onChange={() => setShowSpoilers(!showSpoilers)}
+                label="Show Spoilers"
+              />
               <Toggle
                 checked={showLikedGifts}
                 onChange={setShowLikedGifts}
@@ -249,24 +246,15 @@ const GiftTracker: React.FC = () => {
         <div className="space-y-4">
           {/* Category Filter */}
           <div>
-            <label
-              htmlFor="category-drawer"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Category
-            </label>
-            <select
+            <MultiSelect
               id="category-drawer"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-            >
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
+              label="Category"
+              options={categories}
+              selectedOptions={selectedCategories}
+              onChange={setSelectedCategories}
+              placeholder="Select categories..."
+              className="px-3 py-2 focus:ring-pink-500 focus:border-pink-500"
+            />
           </div>
 
           {/* Sort Filter */}
@@ -286,6 +274,14 @@ const GiftTracker: React.FC = () => {
               <option value="name">Name</option>
               <option value="category">Category</option>
             </select>
+          </div>
+
+          {/* Spoilers Toggle */}
+          <div className="flex items-center justify-between">
+            <label className="text-sm font-medium text-gray-700">
+              Show Spoilers
+            </label>
+            <Toggle checked={showSpoilers} onChange={setShowSpoilers} />
           </div>
 
           {/* Liked Gifts Toggle */}

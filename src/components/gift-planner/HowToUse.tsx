@@ -222,6 +222,10 @@ const HowToUse: React.FC<HowToUseProps> = ({ isOpen, onClose }) => {
                 <li>
                   <strong>Sort by:</strong> Change character card order
                 </li>
+                <li>
+                  <strong>Show Spoilers:</strong> Spoiler content (unreleased or
+                  unlockable characters) is hidden by default
+                </li>
               </ul>
             </div>
 

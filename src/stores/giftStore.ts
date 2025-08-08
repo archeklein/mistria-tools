@@ -14,6 +14,8 @@ export interface Character {
   loved_gifts: string[];
   liked_gifts: string[];
   icon: string;
+  isSpoiler?: boolean;
+  isUnreleased?: boolean;
 }
 
 export interface GiftSelection {
@@ -24,7 +26,6 @@ export interface GiftSelection {
 export interface TrackedGift {
   characterName: string;
   giftName: string;
-  dateGiven?: string;
 }
 
 interface GiftStore {
@@ -33,7 +34,8 @@ interface GiftStore {
   items: Item[];
 
   // Common filter states
-  selectedCategory: string;
+  selectedCategories: string[];
+  showSpoilers: boolean;
   showLikedGifts: boolean;
   showTrackedGifts: boolean;
   sortBy: "alphabetical" | "category";
@@ -47,7 +49,9 @@ interface GiftStore {
 
   // Common actions
   getItem: (itemName: string) => Item | undefined;
-  setSelectedCategory: (category: string) => void;
+  setSelectedCategories: (categories: string[]) => void;
+  toggleCategory: (category: string) => void;
+  setShowSpoilers: (show: boolean) => void;
   setShowLikedGifts: (show: boolean) => void;
   setShowTrackedGifts: (show: boolean) => void;
   setSortBy: (sortBy: "alphabetical" | "category") => void;
@@ -103,7 +107,13 @@ export const useGiftStore = create<GiftStore>()(
       items: itemsData.items,
 
       // Common filter state defaults
-      selectedCategory: "All",
+      selectedCategories: [
+        "Romance Options",
+        "Special Characters",
+        "Townsfolk",
+        "Saturday Market Vendors",
+      ],
+      showSpoilers: false,
       showLikedGifts: false,
       showTrackedGifts: true,
       sortBy: "alphabetical",
@@ -120,8 +130,29 @@ export const useGiftStore = create<GiftStore>()(
         return get().items.find((item) => item.name === itemName);
       },
 
-      setSelectedCategory: (category: string) => {
-        set({ selectedCategory: category });
+      setSelectedCategories: (categories: string[]) => {
+        set({ selectedCategories: categories });
+      },
+
+      toggleCategory: (category: string) => {
+        const { selectedCategories } = get();
+        const isSelected = selectedCategories.includes(category);
+
+        if (isSelected) {
+          // Remove category if it's selected
+          set({
+            selectedCategories: selectedCategories.filter(
+              (c) => c !== category
+            ),
+          });
+        } else {
+          // Add category if it's not selected
+          set({ selectedCategories: [...selectedCategories, category] });
+        }
+      },
+
+      setShowSpoilers: (show: boolean) => {
+        set({ showSpoilers: show });
       },
 
       setShowLikedGifts: (show: boolean) => {
@@ -141,13 +172,23 @@ export const useGiftStore = create<GiftStore>()(
       },
 
       getFilteredAndSortedCharacters: () => {
-        const { characters, selectedCategory, sortBy, searchQuery } = get();
+        const {
+          characters,
+          selectedCategories,
+          sortBy,
+          searchQuery,
+          showSpoilers,
+        } = get();
 
         return characters
           .filter((character) => {
-            const matchesCategory =
-              selectedCategory === "All" ||
-              character.category === selectedCategory;
+            const matchesCategory = selectedCategories.includes(
+              character.category
+            );
+
+            if (!showSpoilers && character.isSpoiler) {
+              return false;
+            }
 
             // If there's a search query, filter by character name or gifts
             if (searchQuery.trim()) {
@@ -298,7 +339,6 @@ export const useGiftStore = create<GiftStore>()(
           const newTrack: TrackedGift = {
             characterName,
             giftName,
-            dateGiven: new Date().toISOString(),
           };
           set({ trackedGifts: [...trackedGifts, newTrack] });
         }
@@ -347,7 +387,8 @@ export const useGiftStore = create<GiftStore>()(
       partialize: (state) => ({
         giftSelections: state.giftSelections,
         trackedGifts: state.trackedGifts,
-        selectedCategory: state.selectedCategory,
+        selectedCategories: state.selectedCategories,
+        showSpoilers: state.showSpoilers,
         showLikedGifts: state.showLikedGifts,
         showTrackedGifts: state.showTrackedGifts,
         sortBy: state.sortBy,
@@ -357,6 +398,27 @@ export const useGiftStore = create<GiftStore>()(
         if (state && state.giftSelections) {
           // Migrate old data format to new format
           state.giftSelections = migrateGiftSelections(state.giftSelections);
+        }
+
+        // Migrate old selectedCategory to selectedCategories
+        if (
+          state &&
+          (state as any).selectedCategory &&
+          !state.selectedCategories
+        ) {
+          const oldCategory = (state as any).selectedCategory;
+          if (oldCategory === "All") {
+            state.selectedCategories = [
+              "Romance Options",
+              "Special Characters",
+              "Townsfolk",
+              "Saturday Market Vendors",
+            ];
+          } else {
+            state.selectedCategories = [oldCategory];
+          }
+          // Remove the old property
+          delete (state as any).selectedCategory;
         }
       },
     }
